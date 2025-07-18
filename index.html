@@ -1,162 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lakshmi Chandrika Yarlagadda | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="nav-container">
-          <div class="hamburger" onclick="toggleSidebar()">☰</div>
-          <ul class="nav-links desktop-only">
-            <li><a href="#hero">CHANDRIKA</a></li>
-            <li><a href="#about">INTRO</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#experience">WORK</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#contact">SAY HELLO</a></li>
-          </ul>
-        </div>
-      </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lakshmi Chandrika Yarlagadda | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
 
-      <div id="sidebar" class="sidebar">
-        <div class="sidebar-header">
-          <span class="close-btn" onclick="toggleSidebar()">×</span>
-        </div>
-        <ul>
-          <li><a href="#hero" onclick="toggleSidebar()">CHANDRIKA</a></li>
-          <li><a href="#about" onclick="toggleSidebar()">INTRO</a></li>
-          <li><a href="#skills" onclick="toggleSidebar()">SKILLS</a></li>
-          <li><a href="#experience" onclick="toggleSidebar()">WORK</a></li>
-          <li><a href="#projects" onclick="toggleSidebar()">PROJECTS</a></li>
-          <li><a href="#contact" onclick="toggleSidebar()">SAY HELLO</a></li>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="hamburger" onclick="toggleSidebar()">☰</div>
+        <ul class="nav-links desktop-only">
+          <li><a href="#hero">CHANDRIKA</a></li>
+          <li><a href="#about">INTRO</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#experience">WORK</a></li>
+          <li><a href="#projects">PROJECTS</a></li>
+          <li><a href="#contact">SAY HELLO</a></li>
         </ul>
       </div>
-    </header>
+    </nav>
 
-    <!-- Hero -->
-    <section id="hero" class="hero-section fade-left">
-      <div class="hero-box">
-        <div class="hero-label-wrapper">
-          <span class="hero-line"></span>
-          <div class="hero-label">REACT. SPRING. SHIP. REPEAT.</div>
+    <div id="sidebar" class="sidebar">
+      <div class="sidebar-header">
+        <span class="close-btn" onclick="toggleSidebar()">×</span>
+      </div>
+      <ul>
+        <li><a href="#hero" onclick="toggleSidebar()">CHANDRIKA</a></li>
+        <li><a href="#about" onclick="toggleSidebar()">INTRO</a></li>
+        <li><a href="#skills" onclick="toggleSidebar()">SKILLS</a></li>
+        <li><a href="#experience" onclick="toggleSidebar()">WORK</a></li>
+        <li><a href="#projects" onclick="toggleSidebar()">PROJECTS</a></li>
+        <li><a href="#contact" onclick="toggleSidebar()">SAY HELLO</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero-section fade-left">
+    <div class="hero-box">
+      <div class="hero-label-wrapper">
+        <span class="hero-line"></span>
+        <div class="hero-label">REACT. SPRING. SHIP. REPEAT.</div>
+      </div>
+      <h1 class="hero-title">
+        I am Chandrika,<br />
+        a full-stack developer<br />
+      </h1>
+      <p class="hero-subtitle">
+        Currently seeking <span id="typing-role"></span> roles — remote or
+        hybrid
+      </p>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="about-box">
+      <div class="about-image">
+        <img src="assets/Profile_pic.png" alt="Chandrika photo" />
+      </div>
+      <div class="about-content fade-up delay-1">
+        <div class="about-label-wrapper">
+          <span class="about-line"></span>
+          <span class="about-label">ABOUT</span>
         </div>
-        <h1 class="hero-title">
-          I am Chandrika,<br />
-          a full-stack developer<br />
-        </h1>
-        <p class="hero-subtitle">
-          Currently seeking <span id="typing-role"></span> roles — remote or
-          hybrid
+        <p class="about-text">
+          I have 4 years of software development experience delivering
+          scalable, full-stack solutions — built on cloud-first
+          infrastructure, distributed design principles, and Gen AI
+          integration. I'm passionate about delivering clean, resilient
+          systems that transform your sketches into production-ready
+          solutions.
+        </p>
+        <a href="assets\Resume_Lakshmi_Chandrika_Yarlagadda.pdf" class="download-btn" download>Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section">
+    <div class="skills-header fade-up delay-1">
+      <p class="section-label">SKILLS</p>
+      <h2 class="projects-title">What I bring to the table</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <p class="skill-header">Languages</p>
+        <p>
+          C#, Java, C, C++, JavaScript, TypeScript, HTML, CSS, SQL, Python
         </p>
       </div>
-    </section>
-
-    <section id="about" class="about-section">
-      <div class="about-box">
-        <div class="about-image">
-          <img src="assets/Profile_pic.png" alt="Chandrika photo" />
-        </div>
-        <div class="about-content fade-up delay-1">
-          <div class="about-label-wrapper">
-            <span class="about-line"></span>
-            <span class="about-label">ABOUT</span>
-          </div>
-          <p class="about-text">
-            I have 4 years of software development experience delivering
-            scalable, full-stack solutions — built on cloud-first
-            infrastructure, distributed design principles, and Gen AI
-            integration. I'm passionate about delivering clean, resilient
-            systems that transform your sketches into production-ready
-            solutions.
-          </p>
-          <a
-            href="assets\Resume_Lakshmi_Chandrika_Yarlagadda.pdf"
-            class="download-btn"
-            download
-            >Download CV</a
-          >
-        </div>
+      <div class="skill-card">
+        <p class="skill-header">Frontend</p>
+        <p>
+          React, Redux, Tailwind, Ant Design, single-spa, RxJS, SASS,
+          Socket.IO, AJAX, jQuery
+        </p>
       </div>
-    </section>
-
-    <section id="skills" class="skills-section">
-      <div class="skills-header fade-up delay-1">
-        <p class="section-label">SKILLS</p>
-        <h2 class="projects-title">What I bring to the table</h2>
+      <div class="skill-card">
+        <p class="skill-header">Backend</p>
+        <p>
+          .NET Core, Entity Framework, Node.js, Spring Boot, REST, GraphQL,
+          gRPC, Protocol Buffers, JSON, XML, Camunda
+        </p>
       </div>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <p class="skill-header">Languages</p>
-          <p>
-            C#, Java, C, C++, JavaScript, TypeScript, HTML, CSS, SQL, Python
-          </p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">Frontend</p>
-          <p>
-            React, Redux, Tailwind, Ant Design, single-spa, RxJS, SASS,
-            Socket.IO, AJAX, jQuery
-          </p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">Backend</p>
-          <p>
-            .NET Core, Entity Framework, Node.js, Spring Boot, REST, GraphQL,
-            gRPC, Protocol Buffers, JSON, XML, Camunda
-          </p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">Data & Messaging</p>
-          <p>SQL Server, Cassandra, Redis, Kafka, Debezium, Elasticsearch</p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">Monitoring & Observability</p>
-          <p>
-            Prometheus, Alertmanager, Grafana, Kibana, ELK Stack, Azure Monitor
-          </p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">Testing</p>
-          <p>
-            Test Driven Development (NUnit, Moq, JUnit, Jest), Integration
-            Testing (Cypress), Functional Testing
-          </p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">Cloud & DevOps</p>
-          <p>
-            Azure (Functions, AKS, API Management, Key Vault, Storage, App
-            Insights, AAD), Docker, Kubernetes, Git, SVN
-          </p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">Architecture & Practices</p>
-          <p>
-            Agile, Monolith to Microservices & Micro-frontends, Event-Driven,
-            MVC, OOP, Design Patterns
-          </p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">ML & Gen AI</p>
-          <p>
-            PyTorch, TensorFlow, Scikit-learn, Hugging Face, Transformers,
-            Faiss, ChromaDB, CUDA, OpenCV, Pandas, NumPy, Matplotlib, Seaborn
-          </p>
-        </div>
+      <div class="skill-card">
+        <p class="skill-header">Data & Messaging</p>
+        <p>SQL Server, Cassandra, Redis, Kafka, Debezium, Elasticsearch</p>
       </div>
-    </section>
+      <div class="skill-card">
+        <p class="skill-header">Monitoring & Observability</p>
+        <p>
+          Prometheus, Alertmanager, Grafana, Kibana, ELK Stack, Azure Monitor
+        </p>
+      </div>
+      <div class="skill-card">
+        <p class="skill-header">Testing</p>
+        <p>
+          Test Driven Development (NUnit, Moq, JUnit, Jest), Integration
+          Testing (Cypress), Functional Testing
+        </p>
+      </div>
+      <div class="skill-card">
+        <p class="skill-header">Cloud & DevOps</p>
+        <p>
+          Azure (Functions, AKS, API Management, Key Vault, Storage, App
+          Insights, AAD), Docker, Kubernetes, Git, SVN
+        </p>
+      </div>
+      <div class="skill-card">
+        <p class="skill-header">Architecture & Practices</p>
+        <p>
+          Agile, Monolith to Microservices & Micro-frontends, Event-Driven,
+          MVC, OOP, Design Patterns
+        </p>
+      </div>
+      <div class="skill-card">
+        <p class="skill-header">ML & Gen AI</p>
+        <p>
+          PyTorch, TensorFlow, Scikit-learn, Hugging Face, Transformers,
+          Faiss, ChromaDB, CUDA, OpenCV, Pandas, NumPy, Matplotlib, Seaborn
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <!-- <section> -->
-    <!-- <section class="expertise-section fade-up delay-1">
+  <!-- <section> -->
+  <!-- <section class="expertise-section fade-up delay-1">
       <div class="expertise-box">
         <div class="section-label">EXPERTISE</div>
         <p class="expertise-title">
@@ -165,343 +158,311 @@
         </p>
       </div>
     </section> -->
-    <section id="experience" class="timeline-container">
-      <!-- EXPERIENCE -->
-      <div class="timeline-column fade-up delay-2">
-        <h2 class="timeline-heading">Experience</h2>
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <h3>Module Lead — Valuelabs, India</h3>
-            <p class="timeline-date">
-              Led end-to-end software delivery, from gathering requirements to
-              deployment, with a focus on microfrontend transformation and Gen
-              AI integrations.
-            </p>
-            <p class="timeline-date">
-              TechStack: React, Javascript, C#, .NET Core, Redis, Kafka,
-              Cypress, Docker, Kubernetes, Azure, Transformers
-            </p>
-            <p class="timeline-date">Apr 2023 – Dec 2023</p>
-          </div>
+  <section id="experience" class="timeline-container">
+    <!-- EXPERIENCE -->
+    <div class="timeline-column fade-up delay-2">
+      <h2 class="timeline-heading">Experience</h2>
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <h3>Module Lead — Valuelabs, India</h3>
+          <p class="timeline-date">
+            Led end-to-end software delivery, from gathering requirements to
+            deployment, with a focus on microfrontend transformation and Gen
+            AI integrations.
+          </p>
+          <p class="timeline-date">
+            TechStack: React, Javascript, C#, .NET Core, Redis, Kafka,
+            Cypress, Docker, Kubernetes, Azure, Transformers
+          </p>
+          <p class="timeline-date">Apr 2023 – Dec 2023</p>
         </div>
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <h3>Senior Software Engineer — Valuelabs, India</h3>
-            <p class="timeline-date">
-              Refactored and optimized backend systems and CI/CD pipelines,
-              while modernizing legacy ASP.NET applications into scalable,
-              cloud-based single-page applications.
-            </p>
-            <p class="timeline-date">
-              TechStack: React, Javascript, C#, .NET Core, SQL, Redis, Kafka,
-              Cypress, Docker, Kubernetes, Azure
-            </p>
-            <p class="timeline-date">Jun 2022 – Apr 2023</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <h3>Senior Software Engineer — Valuelabs, India</h3>
+          <p class="timeline-date">
+            Refactored and optimized backend systems and CI/CD pipelines,
+            while modernizing legacy ASP.NET applications into scalable,
+            cloud-based single-page applications.
+          </p>
+          <p class="timeline-date">
+            TechStack: React, Javascript, C#, .NET Core, SQL, Redis, Kafka,
+            Cypress, Docker, Kubernetes, Azure
+          </p>
+          <p class="timeline-date">Jun 2022 – Apr 2023</p>
         </div>
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <h3>Software Engineer — Valuelabs, India</h3>
-            <p class="timeline-date">
-              Designed reusable React components and Java APIs, drove POC
-              initiatives, resolved live issues, and streamlined microservice
-              orchestration.
-            </p>
-            <p class="timeline-date">
-              TechStack: React, Javascript, Java, Spring Boot, APIs, SQL,
-              Camunda
-            </p>
-            <p class="timeline-date">Jun 2020 – Jun 2022</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <h3>Software Engineer — Valuelabs, India</h3>
+          <p class="timeline-date">
+            Designed reusable React components and Java APIs, drove POC
+            initiatives, resolved live issues, and streamlined microservice
+            orchestration.
+          </p>
+          <p class="timeline-date">
+            TechStack: React, Javascript, Java, Spring Boot, APIs, SQL,
+            Camunda
+          </p>
+          <p class="timeline-date">Jun 2020 – Jun 2022</p>
         </div>
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <h3>Software Developer Intern — Valuelabs, India</h3>
-            <p class="timeline-date">
-              Increased unit and end-to-end test coverage across the
-              application.
-            </p>
-            <p class="timeline-date">TechStack: React, Cypress, Java, JUnit</p>
-            <p class="timeline-date">Dec 2019 – May 2020</p>
-          </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <h3>Software Developer Intern — Valuelabs, India</h3>
+          <p class="timeline-date">
+            Increased unit and end-to-end test coverage across the
+            application.
+          </p>
+          <p class="timeline-date">TechStack: React, Cypress, Java, JUnit</p>
+          <p class="timeline-date">Dec 2019 – May 2020</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="timeline-column fade-up delay-3">
+      <h2 class="timeline-heading">Education</h2>
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <h3>The Pennsylvania State University</h3>
+          <p class="timeline-date">Masters in Computer Science</p>
+          <p class="timeline-date">Jan 2024 – Aug 2025</p>
+          <p class="timeline-date">
+            Course Work: Distributed Systems, Operating Systems, Machine
+            Learning, Deep Learning, Natural Language Processing
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <div class="timeline-content">
+          <h3>Acharya Nagarjuna University</h3>
+          <p class="timeline-date">B.Tech in Computer Science</p>
+          <p class="timeline-date">Aug 2016 – Mar 2020</p>
+          <p class="timeline-date">
+            Course Work: Data Structures, Algorithms, Web Technologies, Object
+            Oriented Programming, Enterprise Programming
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- </section> -->
+
+  <!-- Projects -->
+  <section id="projects" class="projects-section">
+    <div class="projects-header fade-up delay-1">
+      <div class="section-label">RECENT PROJECTS</div>
+      <h2 class="projects-title">
+        Here are some of my favorite projects I have done recently.<br />
+      </h2>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+        <button class="filter-btn" data-filter="systems">Systems</button>
+        <button class="filter-btn" data-filter="ai">AI/ML</button>
+      </div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card" data-category="fullstack" data-title="Enterprise Ticket Tracker"
+        data-desc="A full-stack application for managing enterprise support tickets in real-time."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/ett.png"
+        data-tags="Full Stack, React, Java, Spring Boot, APIs, Web Sockets">
+        <img alt="Enterprise Ticket Tracker" class="project-image" src="assets/Projects/ett.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">Enterprise Ticket Tracker</p>
         </div>
       </div>
 
-      <!-- EDUCATION -->
-      <div class="timeline-column fade-up delay-3">
-        <h2 class="timeline-heading">Education</h2>
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <h3>The Pennsylvania State University</h3>
-            <p class="timeline-date">Masters in Computer Science</p>
-            <p class="timeline-date">Jan 2024 – Aug 2025</p>
-            <p class="timeline-date">
-              Course Work: Distributed Systems, Operating Systems, Machine
-              Learning, Deep Learning, Natural Language Processing
-            </p>
-          </div>
+      <div class="project-card" data-category="fullstack" data-title="The Furniture Store"
+        data-desc="An e-commerce platform for furniture shopping, featuring secure payments and admin dashboard."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/tfs.png"
+        data-tags="Full Stack, React, Node.js, MongoDB, Express">
+        <img alt="The Furniture Store" class="project-image" src="assets/Projects/tfs.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
         </div>
-        <div class="timeline-item">
-          <span class="timeline-dot"></span>
-          <div class="timeline-content">
-            <h3>Acharya Nagarjuna University</h3>
-            <p class="timeline-date">B.Tech in Computer Science</p>
-            <p class="timeline-date">Aug 2016 – Mar 2020</p>
-            <p class="timeline-date">
-              Course Work: Data Structures, Algorithms, Web Technologies, Object
-              Oriented Programming, Enterprise Programming
-            </p>
-          </div>
+        <div class="project-meta">
+          <p class="project-name">The Furniture Store</p>
         </div>
       </div>
-    </section>
-    <!-- </section> -->
 
-    <!-- Projects -->
-    <section id="projects" class="projects-section">
-      <div class="projects-header fade-up delay-1">
-        <div class="section-label">RECENT PROJECTS</div>
-        <h2 class="projects-title">
-          Here are some of my favorite projects I have done recently.<br />
+      <div class="project-card" data-category="systems" data-title="Memory Management"
+        data-desc="Simulation of modern memory management techniques such as paging and segmentation."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/mm.png"
+        data-tags="Operating Systems, C, Paging, Segmentation">
+        <img alt="Memory Management" class="project-image" src="assets/Projects/mm.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">Memory Management</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="systems" data-title="Parallel File System"
+        data-desc="A distributed file system supporting parallel read/write operations for improved performance."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/dps.png"
+        data-tags="Operating Systems, Distributed Systems, C++, Threads">
+        <img alt="Parallel File System" class="project-image" src="assets/Projects/dps.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">Parallel File System</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="fullstack systems" data-title="Chat Application"
+        data-desc="A distributed chat app with real-time messaging using Kafka and WebSockets."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/chat.png"
+        data-tags="Distributed Systems, Kafka, Socket.IO, Node.js, Redis, React">
+        <img alt="Chat Application" class="project-image" src="assets/Projects/chat.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">Chat Application</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ai" data-title="Flight Delay Prediction"
+        data-desc="Machine learning model to predict flight delays based on weather and airline data."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/fdp.png"
+        data-tags="Machine Learning, Python, Pandas">
+        <img alt="Flight Delay Prediction" class="project-image" src="assets/Projects/fdp.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">Flight Delay Prediction</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ai" data-title="Classifying Dialogue Segmentation Breaks"
+        data-desc="LLM-based NLP project to automatically identify dialogue segment boundaries in speech transcripts."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/dsb.png"
+        data-tags="NLP, Python, Transformers">
+        <img alt="Classifying Dialogue Segmentation Breaks" class="project-image" src="assets/Projects/dsb.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">Classifying Dialogue Segmentation Breaks</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ai" data-title="Classification of LLM generated outputs"
+        data-desc="Classifies text generated by LLMs to identify task completion and factuality."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/clo.png"
+        data-tags="NLP, Fine-tuning, Python, Transformers">
+        <img alt="Classification of LLM generated outputs" class="project-image" src="assets/Projects/clo.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">Classification of LLM generated outputs</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ai fullstack" data-title="RAG-Based NLP Tutor"
+        data-desc="Retrieval Augmented Generation-based tutor for question answering using transformer models and ChromaDB."
+        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/rag.png"
+        data-tags="NLP, Python, Transformers, ChromaDB">
+        <img alt="RAG-Based NLP Tutor" class="project-image" src="assets/Projects/rag.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">RAG-Based NLP Tutor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container fade-left delay-1">
+      <div class="contact-header">
+        <div class="contact-label">GET IN TOUCH</div>
+        <h2 class="contact-title">
+          I love to hear from you. Whether you have a question or just want to
+          chat about any employement opportunities or collaborations —
+          <span class="highlight">shoot me a message.</span>
         </h2>
-        <div class="project-filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="systems">Systems</button>
-          <button class="filter-btn" data-filter="ai">AI/ML</button>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-block">
+          <div class="contact-subheading">REACH ME AT</div>
+          <p class="contact-text">lcyarlagadda@gmail.com</p>
+          <p class="contact-text">Explore1 (740) 803-6355</p>
+        </div>
+
+        <div class="contact-block">
+          <div class="contact-subheading">SOCIAL</div>
+          <p class="contact-text">
+            <a href="https://github.com/lcyarlagadda" target="_blank">Github</a>,
+            <a href="https://linkedin.com/in/lakshmi-chandrika" target="_blank">LinkedIn</a>
+          </p>
+        </div>
+
+        <div class="contact-button">
+          <a href="mailto:lcyarlagadda@gmail.com" class="say-hello-btn">SAY HELLO</a>
         </div>
       </div>
-      <div class="projects-grid">
-        <div class="project-card" data-category="fullstack">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="Issue Tracker"
-            class="project-image"
-            src="assets/Projects/ett.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">Enterprise Ticket Tracker.</p>
-          </div>
-          <!-- <div class="tag-container">
-            <span class="tag">Full Stack</span>
-            <span class="tag">React</span><span class="tag">Java</span><span class="tag">Spring Boot</span><span
-              class="tag">APIs</span><span class="tag">Web Sockets</span>
-          </div> -->
-        </div>
-        <div class="project-card" data-category="fullstack">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="Issue Tracker"
-            class="project-image"
-            src="assets/Projects/tfs.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">The Furniture Store.</p>
-          </div>
-          <!-- <div class="tag-container">
-            <span class="tag">Full Stack</span>
-            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span
-              class="tag">Express</span>
-          </div> -->
-        </div>
-        <div class="project-card" data-category="systems">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="File System"
-            class="project-image"
-            src="assets/Projects/mm.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">Memory Management.</p>
-          </div>
-          <!-- <div class="tag-container">
-            <span class="tag">Operating Systems</span>
-            <span class="tag">C</span><span class="tag">Paging</span><span class="tag">Segmentation</span>
-          </div> -->
-        </div>
-        <div class="project-card" data-category="systems">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="File System"
-            class="project-image"
-            src="assets/Projects/dps.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">Parallel File System.</p>
-          </div>
-          <div class="tag-container">
-            <!-- <span class="tag">Operating Systems</span><span class="tag">Distributed Systems</span><span
-              class="tag">C++</span><span class="tag">Threads</span> -->
-          </div>
-        </div>
-        <div class="project-card" data-category="fullstack systems">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="Distributed Chat System"
-            class="project-image"
-            src="assets/Projects/chat.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">Chat Application</p>
-          </div>
-          <!-- <div class="tag-container">
-            <span class="tag">Distributed Systems</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">Socket.IO</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Redis</span>
-            <span class="tag">React</span>
-          </div> -->
-        </div>
+    </div>
+  </section>
 
-        <div class="project-card" data-category="ai">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="RAG Tutor"
-            class="project-image"
-            src="assets/Projects/fdp.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">Flight Delay Prediction.</p>
-          </div>
-          <!-- <div class="tag-container">
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Python</span><span class="tag">Pandas</span>
-          </div> -->
-        </div>
-        <div class="project-card" data-category="ai">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="RAG Tutor"
-            class="project-image"
-            src="assets/Projects/dsb.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">
-              Classifying Dialogue Segmentation Breaks.
-            </p>
-          </div>
-          <!-- <div class="tag-container">
-            <span class="tag">NLP</span>
-            <span class="tag">Python</span><span class="tag">Transformers</span>
-          </div> -->
-        </div>
-        <div class="project-card" data-category="ai">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="RAG Tutor"
-            class="project-image"
-            src="assets/Projects/clo.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">Classification of LLM generated outputs.</p>
-          </div>
-          <!-- <div class="tag-container">
-            <span class="tag">NLP</span> <span class="tag">Fine-tuning</span>
-            <span class="tag">Python</span><span class="tag">Transformers</span>
-          </div> -->
-        </div>
-        <div class="project-card" data-category="ai fullstack">
-          <!-- <div class="project-header">
-            <a class="github-btn" href="https://github.com/your-repo-url" target="_blank">View Code</a>
-          </div> -->
-          <img
-            alt="RAG Tutor"
-            class="project-image"
-            src="assets/Projects/rag.png"
-          />
-          <div class="project-meta">
-            <p class="project-name">RAG-Based NLP Tutor.</p>
-          </div>
-          <!-- <div class="tag-container">
-            <span class="tag">NLP</span>
-            <span class="tag">Python</span><span class="tag">Transformers</span><span class="tag">ChromaDB</span>
-          </div> -->
-        </div>
-      </div>
-    </section>
+  <footer class="footer">
+    <div class="footer-container">
+      <p>
+        © Design Copyright
+        <a href="https://styleshout.com" target="_blank">StyleShout</a>
+        Distribution By
+        <a href="https://themewagon.com" target="_blank">Themewagon</a>
+      </p>
+      <p>
+        Images generated by
+        <a href="https://openai.com/sora" target="_blank">Sora AI by OpenAI</a>
+      </p>
+      <a href="#hero" class="back-to-top">↑</a>
+    </div>
+  </footer>
 
-    <!-- Contact -->
-    <section id="contact" class="contact-section">
-      <div class="contact-container fade-left delay-1">
-        <div class="contact-header">
-          <div class="contact-label">GET IN TOUCH</div>
-          <h2 class="contact-title">
-            I love to hear from you. Whether you have a question or just want to
-            chat about any employement opportunities or collaborations —
-            <span class="highlight">shoot me a message.</span>
-          </h2>
-        </div>
-
-        <div class="contact-details">
-          <div class="contact-block">
-            <div class="contact-subheading">REACH ME AT</div>
-            <p class="contact-text">lcyarlagadda@gmail.com</p>
-            <p class="contact-text">+1 (740) 803-6355</p>
-          </div>
-
-          <div class="contact-block">
-            <div class="contact-subheading">SOCIAL</div>
-            <p class="contact-text">
-              <a href="https://github.com/lcyarlagadda" target="_blank"
-                >Github</a
-              >,
-              <a
-                href="https://linkedin.com/in/lakshmi-chandrika"
-                target="_blank"
-                >LinkedIn</a
-              >
-            </p>
-          </div>
-
-          <div class="contact-button">
-            <a href="mailto:lcyarlagadda@gmail.com" class="say-hello-btn"
-              >SAY HELLO</a
-            >
+  <div id="project-modal-overlay" class="project-modal-overlay">
+    <div class="project-modal">
+      <button class="project-modal-close" aria-label="Close">&times;</button>
+      <div class="project-modal-content">
+        <img src="" alt="" class="project-modal-img" />
+        <div class="project-modal-divider"></div>
+        <div class="project-modal-text">
+          <div class="project-modal-title"></div>
+          <div class="project-modal-desc"></div>
+          <div class="project-modal-tags"></div>
+          <div class="project-modal-links">
+            <a href="#" class="github-btn" target="_blank" rel="noopener">View Code</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
 
-    <footer class="footer">
-      <div class="footer-container">
-        <p>
-          © Design Copyright
-          <a href="https://styleshout.com" target="_blank">StyleShout</a>
-          Distribution By
-          <a href="https://themewagon.com" target="_blank">Themewagon</a>
-        </p>
-        <p>
-          Images generated by
-          <a href="https://openai.com/sora" target="_blank"
-            >Sora AI by OpenAI</a
-          >
-        </p>
-        <a href="#hero" class="back-to-top">↑</a>
-      </div>
-    </footer>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+
+  <script src="script.js"></script>
+
+</body>
+
 </html>
