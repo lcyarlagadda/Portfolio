@@ -153,3 +153,72 @@ document.querySelectorAll('.filter-btn').forEach(button => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Modal references
+  const modalOverlay = document.getElementById('project-modal-overlay');
+  const modalImg = modalOverlay.querySelector('.project-modal-img');
+  const modalTitle = modalOverlay.querySelector('.project-modal-title');
+  const modalDesc = modalOverlay.querySelector('.project-modal-desc');
+  const modalTags = modalOverlay.querySelector('.project-modal-tags');
+  const modalClose = modalOverlay.querySelector('.project-modal-close');
+  const modalLinks = modalOverlay.querySelector('.project-modal-links');
+ const githubBtn = modalLinks.querySelector('.github-btn');
+
+
+  // Open modal on plus button click
+  document.querySelectorAll('.project-plus').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      // Find the parent card
+      const card = this.closest('.project-card');
+      if (!card){
+        console.log("No cards");
+        return;
+      };
+      console.log(card);
+
+      // Set modal content from data attributes
+      modalTitle.textContent = card.getAttribute('data-title') || '';
+      modalDesc.textContent = card.getAttribute('data-desc') || '';
+      modalImg.src = card.getAttribute('data-img') || '';
+      modalImg.alt = card.getAttribute('data-title') || '';
+      const githubUrl = card.getAttribute('data-github');
+      if (githubUrl) {
+        githubBtn.style.display = 'inline-block';
+        githubBtn.href = githubUrl;
+      } else {
+        githubBtn.style.display = 'none';
+      }
+      // Tags
+      const tags = (card.getAttribute('data-tags') || '')
+        .split(',')
+        .map(tag => tag.trim())
+        .filter(Boolean);
+      if (tags.length) {
+        modalTags.innerHTML = tags.map(tag => `<span class="project-modal-tag">${tag}</span>`).join('');
+        modalTags.style.display = 'flex';
+      } else {
+        modalTags.innerHTML = '';
+        modalTags.style.display = 'none';
+      }
+
+      // Show modal
+      modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+    });
+  });
+
+  // Close modal (X button or clicking overlay)
+  modalClose.addEventListener('click', () => {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+});
+
