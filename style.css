@@ -639,6 +639,18 @@ body {
   font-size: 0.9rem;
 }
 
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .footer-container {
   display: flex;
   justify-content: space-between;
