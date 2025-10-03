@@ -139,19 +139,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ========== PROJECT FILTER BUTTONS ==========
 
+function filterProjects(filter) {
+  document.querySelectorAll('.project-card').forEach(card => {
+    const categories = card.getAttribute('data-category').split(" ");
+    if (filter === 'all') {
+      card.style.display = 'block';
+    } else if (filter === 'favourites') {
+      // Only show projects that have 'favourites' in their categories
+      if (categories.includes('favourites')) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    } else {
+      // For other filters, show projects that include the filter category
+      if (categories.includes(filter)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+}
+
+// Initialize with favorites filter on page load
+document.addEventListener('DOMContentLoaded', () => {
+  filterProjects('favourites');
+});
+
 document.querySelectorAll('.filter-btn').forEach(button => {
   button.addEventListener('click', () => {
     const filter = button.getAttribute('data-filter');
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
-    document.querySelectorAll('.project-card').forEach(card => {
-      const categories = card.getAttribute('data-category').split(" ");
-      if (filter === 'all' || categories.includes(filter)) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
+    filterProjects(filter);
   });
 });
 
