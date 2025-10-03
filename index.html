@@ -54,7 +54,11 @@
       <p class="hero-subtitle">
         Currently seeking <span id="typing-role"></span> roles.
       </p>
-      <p> *willing to relocate</p>
+        <div class="hero-relocation-wrapper">
+          <p class="hero-relocation">Open to full-time, contracting & collaborations</p>
+          <p class="hero-relocation">Can join immediately</p>
+          <p class="hero-relocation">Willing to relocate</p>
+        </div>
     </div>
   </section>
 
@@ -73,7 +77,10 @@
           systems that transform your ideas into production-ready
           solutions.
         </p>
-        <a href="assets\Resume_Lakshmi_Chandrika_Yarlagadda.pdf" class="download-btn" download>Download Resume</a>
+        <div class="resume-buttons">
+          <a href="assets\Resume_Lakshmi_Chandrika_Yarlagadda.pdf" class="download-btn" download>Download Full-stack Resume</a>
+          <a href="assets\Resume_Lakshmi_Chandrika_Yarlagadda.pdf" class="download-btn" download>Download SDE Resume</a>
+        </div>
       </div>
     </div>
   </section>
@@ -87,14 +94,14 @@
       <div class="skill-card">
         <p class="skill-header">Languages</p>
         <p>
-          C#, Java, C, C++, JavaScript, TypeScript, HTML, CSS, SQL, Python
+          C#, Java, C++, Python, JavaScript, TypeScript, HTML, CSS, SQL
         </p>
       </div>
       <div class="skill-card">
         <p class="skill-header">Frontend</p>
         <p>
-          React, Redux, Tailwind, Ant Design, single-spa, RxJS, SASS,
-          AJAX, jQuery
+          React.js, Redux, Tailwind, Ant Design, single-spa, RxJS, SASS,
+          AJAX, JQuery
         </p>
       </div>
       <div class="skill-card">
@@ -106,19 +113,19 @@
       </div>
       <div class="skill-card">
         <p class="skill-header">Data & Messaging</p>
-        <p>SQL Server, Cassandra, Mongo, Postgres, Firebase, Redis, Socket.IO, Kafka, Debezium, Elasticsearch</p>
+        <p>SQL Server, Cassandra, MongoDB, Postgres, Firebase, Kafka, Redis, Socket.IO, Debezium, Elasticsearch</p>
       </div>
       <div class="skill-card">
         <p class="skill-header">Monitoring & Observability</p>
         <p>
-          Prometheus, Alertmanager, Grafana, Kibana, ELK Stack, Azure Monitor
+          Prometheus, Alertmanager, Grafana, ELK Stack, Kibana, Azure Monitor
         </p>
       </div>
       <div class="skill-card">
         <p class="skill-header">Testing</p>
         <p>
           Test Driven Development (NUnit, Moq, JUnit, Jest), Integration
-          Testing (Cypress), Functional Testing
+          Testing (Cypress), Azure Load Testing, Functional Testing
         </p>
       </div>
       <div class="skill-card">
@@ -136,10 +143,10 @@
         </p>
       </div>
       <div class="skill-card">
-        <p class="skill-header">ML & Gen AI</p>
+        <p class="skill-header">ML & AI</p>
         <p>
-          PyTorch, TensorFlow, Scikit-learn, Hugging Face, Transformers,
-          Faiss, ChromaDB, CUDA, OpenCV, Pandas, NumPy, Matplotlib, Seaborn
+          Numpy, Pandas, Scikit-learn, Matplotlib, Seaborn, Hugging Face, 
+          LangChain, LLM finetuning, RAGs, Agents, Streamlit
         </p>
       </div>
     </div>
@@ -250,7 +257,7 @@
         Here are some of the projects that I have done recently, feel free to explore<br />
       </h2>
       <div class="project-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn active" data-filter="favourites">Favorites</button>
         <button class="filter-btn" data-filter="fullstack">Full Stack</button>
         <button class="filter-btn" data-filter="systems">Systems</button>
         <button class="filter-btn" data-filter="ai">AI/ML</button>
@@ -258,10 +265,10 @@
     </div>
     <div class="projects-grid">
 
-      <div class="project-card" data-category="fullstack" data-title="Enterprise Ticket Tracker"
-        data-desc="A full-stack application for managing enterprise support tickets in real-time."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/ett.png"
-        data-tags="Full Stack, React, Java, Spring Boot, APIs, Web Sockets">
+      <div class="project-card" data-category="fullstack favourites" data-title="Enterprise Ticket Tracker"
+        data-desc="A full-stack kanban style application for managing enterprise support tickets in real-time."
+        data-github="https://github.com/lcyarlagadda/TicketTracker" data-img="assets/Projects/ett.png"
+        data-tags="Full Stack, React, Firebase, Firestore events">
         <img alt="Enterprise Ticket Tracker" class="project-image" src="assets/Projects/ett.png" />
         <div class="project-hover-overlay">
           <button class="project-plus" aria-label="Show project details">Explore</button>
@@ -271,48 +278,36 @@
         </div>
       </div>
 
-      <div class="project-card" data-category="fullstack" data-title="The Furniture Store"
-        data-desc="An e-commerce platform for furniture shopping, featuring secure payments and admin dashboard."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/tfs.png"
-        data-tags="Full Stack, React, Node.js, MongoDB, Express">
-        <img alt="The Furniture Store" class="project-image" src="assets/Projects/tfs.png" />
-        <div class="project-hover-overlay">
-          <button class="project-plus" aria-label="Show project details">Explore</button>
-        </div>
-        <div class="project-meta">
-          <p class="project-name">The Furniture Store</p>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="systems" data-title="Memory Management"
-        data-desc="Simulation of modern memory management techniques such as paging and segmentation."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/mm.png"
-        data-tags="Operating Systems, C, Paging, Segmentation">
-        <img alt="Memory Management" class="project-image" src="assets/Projects/mm.png" />
-        <div class="project-hover-overlay">
-          <button class="project-plus" aria-label="Show project details">Explore</button>
-        </div>
-        <div class="project-meta">
-          <p class="project-name">Memory Management</p>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="systems" data-title="Parallel File System"
+      <div class="project-card" data-category="systems favourites" data-title="Parallel File System"
         data-desc="A distributed file system supporting parallel read/write operations for improved performance."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/dps.png"
+        data-github="https://github.com/lcyarlagadda/Distributed-File-System" data-img="assets/Projects/dps.png"
         data-tags="Operating Systems, Distributed Systems, C++, Threads">
         <img alt="Parallel File System" class="project-image" src="assets/Projects/dps.png" />
         <div class="project-hover-overlay">
-          <button class="project-plus" aria-label="Show project details">Explore</button>
+          <button class="project-plus disabled" aria-label="Show project details">Explore</button>
         </div>
+        <p class="small">This repo is private due to academic integrity constraints, drop a message if you are interested!</p>
         <div class="project-meta">
           <p class="project-name">Parallel File System</p>
         </div>
       </div>
 
-      <div class="project-card" data-category="fullstack systems" data-title="Chat Application"
-        data-desc="A distributed chat app with real-time messaging using Kafka and WebSockets."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/chat.png"
+      <div class="project-card" data-category="ai favourites" data-title="AgenticTutor"
+        data-desc="Agents and RAG based tutor for question answering using transformer models and ChromaDB."
+        data-github="https://github.com/lcyarlagadda/AgenticTutor" data-img="assets/Projects/rag.png"
+        data-tags="NLP, Python, Transformers, AI Agents, RAG, ChromaDB">
+        <img alt="AgenticTutor" class="project-image" src="assets/Projects/rag.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">AgenticTutor</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="fullstack" data-title="Chat Application"
+        data-desc="A modern, full-stack real-time chat application built with React, Node.js, Express, MongoDB, and Socket.IO. "
+        data-github="https://github.com/lcyarlagadda/ChatApplication" data-img="assets/Projects/chat.png"
         data-tags="Distributed Systems, Kafka, Socket.IO, Node.js, Redis, React">
         <img alt="Chat Application" class="project-image" src="assets/Projects/chat.png" />
         <div class="project-hover-overlay">
@@ -323,35 +318,22 @@
         </div>
       </div>
 
-      <div class="project-card" data-category="ai" data-title="Flight Delay Prediction"
-        data-desc="Machine learning model to predict flight delays based on weather and airline data."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/fdp.png"
-        data-tags="Machine Learning, Python, Pandas">
-        <img alt="Flight Delay Prediction" class="project-image" src="assets/Projects/fdp.png" />
+      <div class="project-card" data-category="systems" data-title="Memory Management"
+        data-desc="Simulation of modern memory management techniques such as paging and segmentation."
+        data-github="https://github.com/lcyarlagadda/OS-Malloc-Lab" data-img="assets/Projects/mm.png"
+        data-tags="Operating Systems, C, Paging, Segmentation">
+        <img alt="Memory Management" class="project-image" src="assets/Projects/mm.png" />
         <div class="project-hover-overlay">
           <button class="project-plus" aria-label="Show project details">Explore</button>
         </div>
         <div class="project-meta">
-          <p class="project-name">Flight Delay Prediction</p>
-        </div>
-      </div>
-
-      <div class="project-card" data-category="ai" data-title="Classifying Dialogue Segmentation Breaks"
-        data-desc="LLM-based NLP project to automatically identify dialogue segment boundaries in speech transcripts."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/dsb.png"
-        data-tags="NLP, Python, Transformers">
-        <img alt="Classifying Dialogue Segmentation Breaks" class="project-image" src="assets/Projects/dsb.png" />
-        <div class="project-hover-overlay">
-          <button class="project-plus" aria-label="Show project details">Explore</button>
-        </div>
-        <div class="project-meta">
-          <p class="project-name">Classifying Dialogue Segmentation Breaks</p>
+          <p class="project-name">Memory Management</p>
         </div>
       </div>
 
       <div class="project-card" data-category="ai" data-title="Classification of LLM generated outputs"
         data-desc="Classifies text generated by LLMs to identify task completion and factuality."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/clo.png"
+        data-github="https://github.com/lcyarlagadda/ML-LLM-Generated-Text-Classification" data-img="assets/Projects/clo.png"
         data-tags="NLP, Fine-tuning, Python, Transformers">
         <img alt="Classification of LLM generated outputs" class="project-image" src="assets/Projects/clo.png" />
         <div class="project-hover-overlay">
@@ -362,18 +344,45 @@
         </div>
       </div>
 
-      <div class="project-card" data-category="ai fullstack" data-title="RAG-Based NLP Tutor"
-        data-desc="Retrieval Augmented Generation-based tutor for question answering using transformer models and ChromaDB."
-        data-github="https://github.com/myuser/myproject" data-img="assets/Projects/rag.png"
-        data-tags="NLP, Python, Transformers, ChromaDB">
-        <img alt="RAG-Based NLP Tutor" class="project-image" src="assets/Projects/rag.png" />
+      <div class="project-card" data-category="fullstack" data-title="PetCare"
+        data-desc="A modern, full-stack real-time chat application built with React, Node.js, Express, MongoDB, and Socket.IO. "
+        data-github="https://github.com/lcyarlagadda/ChatApplication" data-img="assets/Projects/chat.png"
+        data-tags="Distributed Systems, Kafka, Socket.IO, Node.js, Redis, React">
+        <img alt="Chat Application" class="project-image" src="assets/Projects/chat.png" />
         <div class="project-hover-overlay">
           <button class="project-plus" aria-label="Show project details">Explore</button>
         </div>
         <div class="project-meta">
-          <p class="project-name">RAG-Based NLP Tutor</p>
+          <p class="project-name">Chat Application</p>
         </div>
       </div>
+
+      <div class="project-card" data-category="systems" data-title="HTTP Server"
+        data-desc="A production-ready HTTP server built in Go, featuring enterprise-grade capabilities including RBAC authentication, intelligent caching, compression, real-time metrics, and multimedia support."
+        data-github="https://github.com/lcyarlagadda/go-http-server" data-img="assets/Projects/mm.png"
+        data-tags="Go">
+        <img alt="HTTP Server" class="project-image" src="assets/Projects/mm.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">HTTP Server</p>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ai" data-title="Flight Delay Prediction"
+        data-desc="Machine learning model to predict flight delays based on weather and airline data."
+        data-github="https://github.com/lcyarlagadda/DDD-Flight-Delay-Prediction" data-img="assets/Projects/fdp.png"
+        data-tags="Machine Learning, Python, Pandas">
+        <img alt="Flight Delay Prediction" class="project-image" src="assets/Projects/fdp.png" />
+        <div class="project-hover-overlay">
+          <button class="project-plus" aria-label="Show project details">Explore</button>
+        </div>
+        <div class="project-meta">
+          <p class="project-name">Flight Delay Prediction</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -393,14 +402,14 @@
         <div class="contact-block">
           <div class="contact-subheading">REACH ME AT</div>
           <p class="contact-text">lcyarlagadda@gmail.com</p>
-          <p class="contact-text">Explore1 (740) 803-6355</p>
+          <p class="contact-text">+1 (740) 803-6355</p>
         </div>
 
         <div class="contact-block">
           <div class="contact-subheading">SOCIAL</div>
           <p class="contact-text">
             <a href="https://github.com/lcyarlagadda" target="_blank">Github</a>,
-            <a href="https://linkedin.com/in/lakshmi-chandrika" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/lakshmi-chandrika-yarlagadda-8608b21b1/" target="_blank">LinkedIn</a>
           </p>
         </div>
 
