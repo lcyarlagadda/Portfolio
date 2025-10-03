@@ -89,6 +89,7 @@ function toggleSidebar() {
   }
 }
 
+
 // ========== FADE-LEFT ON SCROLL ==========
 
 function animateOnScroll() {
