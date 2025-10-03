@@ -1192,17 +1192,39 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
-.scroll-indicator {
-  text-align: center;
-  margin-top: 15px;
+.skills-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
 }
 
-.scroll-hint {
-  color: #f9a825;
-  font-size: 0.8rem;
-  font-weight: 500;
-  opacity: 0.7;
-  font-family: 'Montserrat', sans-serif;
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(249, 168, 37, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(249, 168, 37, 0.5);
+}
+
+.dot.active {
+  background-color: #f9a825;
+  box-shadow: 0 0 8px rgba(249, 168, 37, 0.5);
+}
+
+.dot:hover {
+  background-color: rgba(249, 168, 37, 0.6);
+  transform: scale(1.1);
 }
 
 /* Responsive Skills Section */

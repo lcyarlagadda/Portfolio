@@ -155,6 +155,59 @@ document.querySelectorAll('.filter-btn').forEach(button => {
   });
 });
 
+// ========== SKILLS PAGINATION ==========
+
+function updateSkillsPagination() {
+  const scrollWrapper = document.querySelector('.skills-scroll-wrapper');
+  const dots = document.querySelectorAll('.dot');
+  const skillCards = document.querySelectorAll('.skill-card');
+  
+  if (!scrollWrapper || !dots.length || !skillCards.length) return;
+  
+  const scrollLeft = scrollWrapper.scrollLeft;
+  const clientWidth = scrollWrapper.clientWidth;
+  const cardWidth = skillCards[0].offsetWidth;
+  const gap = 20; // gap between cards
+  const totalCardWidth = cardWidth + gap;
+  
+  // Calculate which cards are currently visible
+  const visibleStart = Math.floor(scrollLeft / totalCardWidth);
+  const visibleEnd = Math.ceil((scrollLeft + clientWidth) / totalCardWidth);
+  
+  // Update dots based on visible cards
+  dots.forEach((dot, index) => {
+    if (index >= visibleStart && index < visibleEnd) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+// Add scroll listener to skills section
+document.addEventListener('DOMContentLoaded', () => {
+  const skillsScrollWrapper = document.querySelector('.skills-scroll-wrapper');
+  if (skillsScrollWrapper) {
+    skillsScrollWrapper.addEventListener('scroll', updateSkillsPagination);
+  }
+  
+  // Add click handlers to dots
+  document.querySelectorAll('.dot').forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      const scrollWrapper = document.querySelector('.skills-scroll-wrapper');
+      if (scrollWrapper) {
+        const cardWidth = scrollWrapper.querySelector('.skill-card').offsetWidth;
+        const gap = 20; // gap between cards
+        const scrollPosition = index * (cardWidth + gap);
+        scrollWrapper.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+});
+
 document.addEventListener("DOMContentLoaded", function() {
   // Modal references
   const modalOverlay = document.getElementById('project-modal-overlay');
