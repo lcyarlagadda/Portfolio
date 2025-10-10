@@ -1,3 +1,47 @@
+// ========== THEME TOGGLE FUNCTIONALITY ==========
+
+// Favicon SVGs for light and dark themes
+const faviconLight = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2364748b;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23475569;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='30' cy='30' r='28' fill='%23f8fafc' stroke='url(%23gradient)' stroke-width='2'/%3E%3Ctext x='30' y='38' font-family='Montserrat, sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='url(%23gradient)' filter='url(%23glow)'%3ELC%3C/text%3E%3C/svg%3E";
+
+const faviconDark = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2394a3b8;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23cbd5e0;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='30' cy='30' r='28' fill='%231e293b' stroke='url(%23gradient)' stroke-width='2'/%3E%3Ctext x='30' y='38' font-family='Montserrat, sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='url(%23gradient)' filter='url(%23glow)'%3ELC%3C/text%3E%3C/svg%3E";
+
+// Function to update favicon based on theme
+function updateFavicon(theme) {
+  const favicon = document.getElementById('favicon');
+  if (favicon) {
+    favicon.href = theme === 'dark' ? faviconDark : faviconLight;
+  }
+}
+
+// Check for saved theme preference or default to 'light' mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
+updateFavicon(currentTheme);
+
+// Theme toggle function
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateFavicon(newTheme);
+}
+
+// Add event listeners to both desktop and mobile theme toggle buttons
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('themeToggle');
+  const themeToggleMobile = document.getElementById('themeToggleMobile');
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+  
+  if (themeToggleMobile) {
+    themeToggleMobile.addEventListener('click', toggleTheme);
+  }
+});
+
 // ========== NAVBAR & SIDEBAR ACTIVE HIGHLIGHT ==========
 
 // Helper to update .active on both navbar and sidebar links
@@ -36,19 +80,14 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// On click: highlight right away, scroll, then let scroll event correct highlight
+// On click: scroll and let scroll event handle the active state
 document.querySelectorAll('.navbar a[href^="#"], .sidebar a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     const targetId = this.getAttribute('href').replace('#', '');
     const target = document.getElementById(targetId);
     if (target) {
-      updateActiveLinks(targetId); // instant feedback
-      target.scrollIntoView({ behavior: 'smooth' });
-      // After scroll finishes, let scroll handler take over (timeout may be tuned)
-      setTimeout(() => {
-        updateActiveLinks(getCurrentSection());
-      }, 500);
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     // If this is in sidebar, close sidebar on click (for mobile)
     if (this.closest('.sidebar')) {
@@ -176,58 +215,6 @@ document.querySelectorAll('.filter-btn').forEach(button => {
   });
 });
 
-// ========== SKILLS PAGINATION ==========
-
-function updateSkillsPagination() {
-  const scrollWrapper = document.querySelector('.skills-scroll-wrapper');
-  const dots = document.querySelectorAll('.dot');
-  const skillCards = document.querySelectorAll('.skill-card');
-  
-  if (!scrollWrapper || !dots.length || !skillCards.length) return;
-  
-  const scrollLeft = scrollWrapper.scrollLeft;
-  const clientWidth = scrollWrapper.clientWidth;
-  const cardWidth = skillCards[0].offsetWidth;
-  const gap = 20; // gap between cards
-  const totalCardWidth = cardWidth + gap;
-  
-  // Calculate which cards are currently visible
-  const visibleStart = Math.floor(scrollLeft / totalCardWidth);
-  const visibleEnd = Math.ceil((scrollLeft + clientWidth) / totalCardWidth);
-  
-  // Update dots based on visible cards
-  dots.forEach((dot, index) => {
-    if (index >= visibleStart && index < visibleEnd) {
-      dot.classList.add('active');
-    } else {
-      dot.classList.remove('active');
-    }
-  });
-}
-
-// Add scroll listener to skills section
-document.addEventListener('DOMContentLoaded', () => {
-  const skillsScrollWrapper = document.querySelector('.skills-scroll-wrapper');
-  if (skillsScrollWrapper) {
-    skillsScrollWrapper.addEventListener('scroll', updateSkillsPagination);
-  }
-  
-  // Add click handlers to dots
-  document.querySelectorAll('.dot').forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      const scrollWrapper = document.querySelector('.skills-scroll-wrapper');
-      if (scrollWrapper) {
-        const cardWidth = scrollWrapper.querySelector('.skill-card').offsetWidth;
-        const gap = 20; // gap between cards
-        const scrollPosition = index * (cardWidth + gap);
-        scrollWrapper.scrollTo({
-          left: scrollPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-});
 
 document.addEventListener("DOMContentLoaded", function() {
   // Modal references

@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lakshmi Chandrika Yarlagadda | Portfolio</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cdefs%3E%3ClinearGradient id='goldGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f9a825;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23f57f17;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='30' cy='30' r='28' fill='%23000000' stroke='url(%23goldGradient)' stroke-width='2'/%3E%3Ctext x='30' y='38' font-family='Montserrat, sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='url(%23goldGradient)' filter='url(%23glow)'%3ELC%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" id="favicon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2364748b;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23475569;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='30' cy='30' r='28' fill='%23f8fafc' stroke='url(%23gradient)' stroke-width='2'/%3E%3Ctext x='30' y='38' font-family='Montserrat, sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='url(%23gradient)' filter='url(%23glow)'%3ELC%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
@@ -25,9 +26,17 @@
         </ul>
       </div>
     </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="sun-icon">☀</span>
+      <span class="moon-icon">☾</span>
+    </button>
 
     <div id="sidebar" class="sidebar">
       <div class="sidebar-header">
+        <button class="theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle theme">
+          <span class="sun-icon">☀</span>
+          <span class="moon-icon">☾</span>
+        </button>
         <span class="close-btn" onclick="toggleSidebar()">×</span>
       </div>
       <ul>
@@ -46,27 +55,24 @@
     <div class="hero-box">
       <div class="hero-label-wrapper">
         <span class="hero-line"></span>
-        <div class="hero-label">REACT. BOOT. SHIP. REPEAT.</div>
+        <div class="hero-label">BOOT. REACT. SHIP. REPEAT.</div>
       </div>
       <h1 class="hero-title">
-        I am Chandrika,<br />
+        Hi, I am Chandrika,<br />
         a full-stack developer<br />
       </h1>
       <p class="hero-subtitle">
         Currently seeking <span id="typing-role"></span> roles.
       </p>
-      <div class="hero-relocation-wrapper">
-          <p class="hero-relocation">Open to full-time, contracting & collaborations</p>
-          <p class="hero-relocation">Can join immediately</p>
-          <p class="hero-relocation">Willing to relocate</p>
-      </div>
     </div>
   </section>
 
   <section id="about" class="about-section">
     <div class="about-box">
-      <div class="about-image fade-up delay-1">
+      <div class="about-image">
         <div class="profile-pic-container">
+          <div class="liquid-blob blob-1"></div>
+          <div class="liquid-blob blob-2"></div>
           <img src="./assets/Projects/Pic.jpg" alt="Lakshmi Chandrika Yarlagadda" class="profile-pic">
         </div>
       </div>
@@ -76,24 +82,17 @@
           <span class="about-label">ABOUT</span>
         </div>
         <p class="about-text">
-          I am a Master’s student with 4 years of software development experience delivering full-stack solutions built on cloud-first infrastructure, leveraging distributed design principles and GenAI integrations.
-          <br/><br/>
-          With expertise across frontend (React, JavaScript), backend (C#, Node.js, Java, Python), and cloud-native systems (Azure, Docker, Kubernetes), I specialize in building clean, resilient applications that scale.
-          <br/><br/>
-          Experienced across the full software development lifecycle, I transform ideas into production-ready, user-friendly solutions while leading and collaborating with agile teams.</p>
-        <div class="resume-buttons">
-          <a href="assets\Resume_Lakshmi_Chandrika_Yarlagadda.pdf" class="download-btn" download>
-            <svg class="download-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 15.75L12 3M12 15.75L8.25 12M12 15.75L15.75 12M3 15.75V18.75C3 19.3467 3.23705 19.919 3.65901 20.341C4.08097 20.7629 4.65326 21 5.25 21H18.75C19.3467 21 19.919 20.7629 20.341 20.341C20.7629 19.919 21 19.3467 21 18.75V15.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Full-stack Resume
-          </a>
-          <a href="assets\Resume_Lakshmi_Chandrika_Yarlagadda.pdf" class="download-btn" download>
-            <svg class="download-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 15.75L12 3M12 15.75L8.25 12M12 15.75L15.75 12M3 15.75V18.75C3 19.3467 3.23705 19.919 3.65901 20.341C4.08097 20.7629 4.65326 21 5.25 21H18.75C19.3467 21 19.919 20.7629 20.341 20.341C20.7629 19.919 21 19.3467 21 18.75V15.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            SDE Resume
-          </a>
+          Computer Science graduate at Penn State, experienced in delivering full-stack solutions built
+          on cloud-first infrastructure, leveraging distributed design principles and GenAI integrations.
+          <br /><br />
+          With expertise across frontend (React), backend (C#, Node.js, Java), and cloud-native systems (Azure, AWS), I specialize in building clean, resilient, and scalable applications.
+          <br /><br />
+          Experienced in microfrontend and microservice architectures, I lead projects through the full development lifecycle, from concept to production, delivering scalable, user-focused solutions in agile environments.
+        </p>
+        <div class="hero-relocation-wrapper">
+          <p class="hero-relocation">Open to full-time, contracting & collaborations</p>
+          <p class="hero-relocation">Can join immediately</p>
+          <p class="hero-relocation">Willing to relocate</p>
         </div>
       </div>
     </div>
@@ -107,7 +106,7 @@
       <div class="skills-scroll-wrapper">
       <div class="skill-card">
         <p class="skill-header">Languages</p>
-          <p>C#, Java, C++, Python, JavaScript, TypeScript, Go, HTML, CSS, SQL</p>
+          <p>C#, Java, Python, JavaScript, TypeScript, Go, HTML, CSS, SQL</p>
       </div>
       <div class="skill-card">
         <p class="skill-header">Frontend</p>
@@ -115,141 +114,72 @@
       </div>
       <div class="skill-card">
         <p class="skill-header">Backend</p>
-          <p>.NET Core, Entity Framework, Express, Node.js, Spring Boot, REST, GraphQL, gRPC, Protocol Buffers, Shell, Camunda</p>
+          <p>.NET Core, Entity Framework, Node.js, Spring Boot, REST, GraphQL, Shell</p>
       </div>
       <div class="skill-card">
         <p class="skill-header">Data & Messaging</p>
-          <p>SQL Server, Cassandra, MongoDB, Postgres, Firebase, Kafka, Redis, Socket.IO, Debezium, Elasticsearch</p>
+          <p>SQL Server, Cassandra, MongoDB, Postgres, Firebase, Kafka, Redis, Socket.IO, Elasticsearch</p>
       </div>
       <div class="skill-card">
-        <p class="skill-header">Monitoring & Observability</p>
-          <p>Prometheus, Alertmanager, Grafana, ELK Stack, Kibana, Azure Monitor</p>
-      </div>
-      <div class="skill-card">
-        <p class="skill-header">Testing</p>
-          <p>Test Driven Development (NUnit, Moq, JUnit, Jest), Integration Testing (Cypress), Azure Load Testing, Functional Testing</p>
+          <p class="skill-header">Tools and Testing</p>
+          <p>NUnit, JUnit, Jest, Cypress, Prometheus, Grafana, ELK Stack, Azure Monitor</p>
       </div>
       <div class="skill-card">
         <p class="skill-header">Cloud & DevOps</p>
-          <p>Azure (Functions, AKS, API Management, Key Vault, Storage, App Insights, AAD), Heroku, Vercel, Docker, Kubernetes, Git, SVN</p>
-      </div>
-      <div class="skill-card">
-        <p class="skill-header">Architecture & Practices</p>
-          <p>Agile, Monolith to Microservices & Micro-frontends, Event-Driven, MVC, OOP, Design Patterns</p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-header">ML & AI</p>
-          <p>Numpy, Pandas, Scikit-learn, Matplotlib, Seaborn, Hugging Face, LangChain, LLM finetuning, RAGs, Agents, Streamlit</p>
-        </div>
-      </div>
-      <div class="skills-pagination">
-        <div class="pagination-dots">
-          <span class="dot active" data-index="0"></span>
-          <span class="dot" data-index="1"></span>
-          <span class="dot" data-index="2"></span>
-          <span class="dot" data-index="3"></span>
-          <span class="dot" data-index="4"></span>
-          <span class="dot" data-index="5"></span>
-          <span class="dot" data-index="6"></span>
-          <span class="dot" data-index="7"></span>
-          <span class="dot" data-index="8"></span>
-        </div>
+          <p>Azure, AWS, Docker, Kubernetes, Git, SVN</p>
       </div>
     </div>
   </section>
 
-  <section id="experience" class="timeline-container">
-    <!-- EXPERIENCE -->
-    <div class="timeline-column fade-up delay-2">
-      <h2 class="timeline-heading">Experience</h2>
-      <div class="timeline-item">
-        <span class="timeline-dot"></span>
-        <div class="timeline-content">
-          <h3>Module Lead — Valuelabs, India</h3>
-          <p class="timeline-date">
-            Led end-to-end software delivery, from gathering requirements to
-            deployment, with a focus on microfrontend transformation and Gen
-            AI integrations.
-          </p>
-          <p class="timeline-date">
-            TechStack: React, Javascript, C#, .NET Core, Redis, Kafka,
-            Cypress, Docker, Kubernetes, Azure, Transformers
-          </p>
-          <p class="timeline-date">Apr 2023 – Dec 2023</p>
+  <!-- Experience Section -->
+  <section id="experience" class="experience-section">
+    <div class="experience-header">
+      <h2 class="experience-title-main">MY EXPERIENCE</h2>
         </div>
+    
+    <div class="experience-list">
+      <div class="experience-item">
+        <div class="experience-item-header">
+          <div class="experience-job-info">
+            <h3 class="job-title">Module Lead</h3>
+            <p class="company-location">Valuelabs, Hyderabad, India</p>
       </div>
-      <div class="timeline-item">
-        <span class="timeline-dot"></span>
-        <div class="timeline-content">
-          <h3>Senior Software Engineer — Valuelabs, India</h3>
-          <p class="timeline-date">
-            Refactored and optimized backend systems and CI/CD pipelines,
-            while modernizing legacy ASP.NET applications into scalable,
-            cloud-based single-page applications.
-          </p>
-          <p class="timeline-date">
-            TechStack: React, Javascript, C#, .NET Core, SQL, Redis, Kafka,
-            Cypress, Docker, Kubernetes, Azure
-          </p>
-          <p class="timeline-date">Jun 2022 – Apr 2023</p>
+          <div class="experience-dates">Apr 2023 – Dec 2023</div>
         </div>
+        <div class="experience-divider"></div>
       </div>
-      <div class="timeline-item">
-        <span class="timeline-dot"></span>
-        <div class="timeline-content">
-          <h3>Software Engineer — Valuelabs, India</h3>
-          <p class="timeline-date">
-            Designed reusable React components and Java APIs, drove POC
-            initiatives, resolved live issues, and streamlined microservice
-            orchestration.
-          </p>
-          <p class="timeline-date">
-            TechStack: React, Javascript, Java, Spring Boot, APIs, SQL,
-            Camunda
-          </p>
-          <p class="timeline-date">Jun 2020 – Jun 2022</p>
+
+      <div class="experience-item">
+        <div class="experience-item-header">
+          <div class="experience-job-info">
+            <h3 class="job-title">Senior Software Engineer</h3>
+            <p class="company-location">Valuelabs, Hyderabad, India</p>
+          </div>
+          <div class="experience-dates">Jun 2022 – Apr 2023</div>
         </div>
+        <div class="experience-divider"></div>
       </div>
-      <div class="timeline-item">
-        <span class="timeline-dot"></span>
-        <div class="timeline-content">
-          <h3>Software Developer Intern — Valuelabs, India</h3>
-          <p class="timeline-date">
-            Increased unit and end-to-end test coverage across the
-            application.
-          </p>
-          <p class="timeline-date">TechStack: React, Cypress, Java, JUnit</p>
-          <p class="timeline-date">Dec 2019 – May 2020</p>
+
+      <div class="experience-item">
+        <div class="experience-item-header">
+          <div class="experience-job-info">
+            <h3 class="job-title">Software Engineer</h3>
+            <p class="company-location">Valuelabs, Hyderabad, India</p>
+          </div>
+          <div class="experience-dates">Jun 2020 – Jun 2022</div>
         </div>
-      </div>
+        <div class="experience-divider"></div>
     </div>
 
-    <!-- EDUCATION -->
-    <div class="timeline-column fade-up delay-3">
-      <h2 class="timeline-heading">Education</h2>
-      <div class="timeline-item">
-        <span class="timeline-dot"></span>
-        <div class="timeline-content">
-          <h3>The Pennsylvania State University</h3>
-          <p class="timeline-date">Masters in Computer Science</p>
-          <p class="timeline-date">Jan 2024 – Aug 2025</p>
-          <p class="timeline-date">
-            Course Work: DSA, Distributed Systems, Operating Systems, Machine
-            Learning, Deep Learning, Natural Language Processing
-          </p>
+      <div class="experience-item">
+        <div class="experience-item-header">
+          <div class="experience-job-info">
+            <h3 class="job-title">Software Developer Intern</h3>
+            <p class="company-location">Valuelabs, Hyderabad, India</p>
         </div>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-dot"></span>
-        <div class="timeline-content">
-          <h3>Acharya Nagarjuna University</h3>
-          <p class="timeline-date">B.Tech in Computer Science</p>
-          <p class="timeline-date">Aug 2016 – Mar 2020</p>
-          <p class="timeline-date">
-            Course Work: Data Structures, Algorithms, Web Technologies, Object
-            Oriented Programming, Enterprise Programming
-          </p>
+          <div class="experience-dates">Dec 2019 – May 2020</div>
         </div>
+        <div class="experience-divider"></div>
       </div>
     </div>
   </section>
@@ -269,86 +199,88 @@
     <div class="projects-grid">
 
       <div class="project-card" data-category="fullstack favourites">
-        <img alt="Enterprise Ticket Tracker" class="project-image" src="assets/Projects/ett.png" />
         <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">Enterprise Ticket Tracker</h3>
             <a href="https://github.com/lcyarlagadda/TicketTracker" class="github-link" target="_blank">
               <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  fill="currentColor" />
               </svg>
             </a>
           </div>
-          <p class="project-description">A full-stack kanban style application for managing enterprise support tickets in real-time.</p>
+          <p class="project-description">A full-stack kanban style application for managing enterprise support tickets
+            in real-time.</p>
           <div class="tech-stack">
             <span class="tech-tag">React</span>
             <span class="tech-tag">Typescript</span>
             <span class="tech-tag">Redux Thunk</span>
             <span class="tech-tag">Firebase</span>
             <span class="tech-tag">Firestore</span>
-            <span class="tech-tag">Responsive</span>
           </div>
         </div>
       </div>
 
       <div class="project-card" data-category="fullstack">
-        <img alt="Chat Application" class="project-image" src="assets/Projects/chat.png" />
         <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">Chat Application</h3>
             <a href="https://github.com/lcyarlagadda/ChatApplication" class="github-link" target="_blank">
               <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  fill="currentColor" />
               </svg>
             </a>
           </div>
-          <p class="project-description">A real-time chat application with online presence,typing indicators, offline support, group chats and more.</p>
+          <p class="project-description">A real-time chat application with online presence,typing indicators, offline
+            support, group chats and more.</p>
           <div class="tech-stack">
             <span class="tech-tag">React</span>
             <span class="tech-tag">Node.js</span>
             <span class="tech-tag">Socket.IO</span>
-            <span class="tech-tag">Kafka</span>
             <span class="tech-tag">Redis</span>
-            <span class="tech-tag">Mongo</span>
-            <span class="tech-tag">Responsive</span>
+            <span class="tech-tag">MongoDB</span>
           </div>
         </div>
       </div>
 
       <div class="project-card" data-category="fullstack">
-        <img alt="Petcare" class="project-image" src="assets/Projects/chat.png" />
         <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">Pet care</h3>
-            <a href="https://github.com/lcyarlagadda/ChatApplication" class="github-link" target="_blank">
-              <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
-              </svg>
-            </a>
+             <span class="private-repo-tag">
+              In progress
+            </span>
           </div>
-          <p class="project-description">A mpbile application that manages pets, shelters and donations.</p>
+          <p class="project-description">A mobile application that manages pets, shelters and donations.</p>
           <div class="tech-stack">
             <span class="tech-tag">React native</span>
+            <span class="tech-tag">Expo</span>
             <span class="tech-tag">Java</span>
             <span class="tech-tag">Postgres</span>
             <span class="tech-tag">Springboot</span>
             <span class="tech-tag">Microservices</span>
+            <span class="tech-tag">RabbitMQ</span>
           </div>
         </div>
       </div>
 
       <div class="project-card" data-category="systems favourites">
-        <img alt="Parallel File System" class="project-image" src="assets/Projects/dps.png" />
         <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">Parallel File System</h3>
-            <a href="https://github.com/lcyarlagadda/Distributed-File-System" class="github-link" target="_blank">
-              <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+            <span class="private-repo-tag">
+              <svg class="lock-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 11V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
-            </a>
+              Private Repo
+            </span>
           </div>
-          <p class="project-description">A sequentially consistent parallel file system with concurrent read/write support coordinated by a metaserver.</p>
+          <p class="project-description">A sequentially consistent parallel file system with concurrent read/write
+            support coordinated by a metaserver.</p>
           <div class="tech-stack">
             <span class="tech-tag">C++</span>
             <span class="tech-tag">gRPC</span>
@@ -360,17 +292,19 @@
 
 
       <div class="project-card" data-category="systems">
-        <img alt="Memory Management" class="project-image" src="assets/Projects/mm.png" />
         <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">Memory management</h3>
             <a href="https://github.com/lcyarlagadda/OS-Malloc-Lab" class="github-link" target="_blank">
               <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  fill="currentColor" />
               </svg>
             </a>
           </div>
-          <p class="project-description">Implementation of malloc, calloc and realloc functions with srbk function calls and explicit free lists</p>
+          <p class="project-description">Implementation of malloc, calloc and realloc functions with srbk function calls
+            and explicit free lists</p>
           <div class="tech-stack">
             <span class="tech-tag">C</span>
             <span class="tech-tag">Operating Systems</span>
@@ -379,38 +313,15 @@
         </div>
       </div>
 
-      <div class="project-card" data-category="systems">
-        <img alt="HTTP Server" class="project-image" src="assets/Projects/mm.png" />
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">HTTP Server</h3>
-            <a href="https://github.com/lcyarlagadda/go-http-server" class="github-link" target="_blank">
-              <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
-              </svg>
-            </a>
-          </div>
-          <p class="project-description">A http server built in Go with RBAC authentication, caching, and real-time metric tracking.</p>
-          <div class="tech-stack">
-            <span class="tech-tag">Go</span>
-            <span class="tech-tag">LRU Cache</span>
-            <span class="tech-tag">Net</span>
-          </div>
-        </div>
-      </div>
-
       <div class="project-card" data-category="ai favourites">
-        <img alt="EduGPT" class="project-image" src="assets/Projects/rag.png" />
         <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">EduGPT</h3>
-            <a href="https://github.com/lcyarlagadda/EduGPT" class="github-link" target="_blank">
-              <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
-              </svg>
-            </a>
+            <span class="private-repo-tag">
+              In progress
           </div>
-          <p class="project-description">AI agents for retriveing, comparing, summarizing and reviewing answers for NLP questions.</p>
+          <p class="project-description">AI agents for retriveing, comparing, summarizing and reviewing answers for NLP
+            questions.</p>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Transformers</span>
@@ -422,17 +333,20 @@
       </div>
 
             <div class="project-card" data-category="ai">
-        <img alt="Classification of LLM generated outputs" class="project-image" src="assets/Projects/csc.png" />
-        <div class="project-content">
+       <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">Classification of LLM generated outputs</h3>
-            <a href="https://github.com/lcyarlagadda/ML-LLM-Generated-Text-Classification" class="github-link" target="_blank">
+            <a href="https://github.com/lcyarlagadda/ML-LLM-Generated-Text-Classification" class="github-link"
+              target="_blank">
               <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  fill="currentColor" />
               </svg>
             </a>
           </div>
-          <p class="project-description">Identify the LLM that generated the sentence completion based on the training data.</p>
+          <p class="project-description">Identify the LLM that generated the sentence completion based on the training
+            data.</p>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Transformers</span>
@@ -443,17 +357,19 @@
       </div>
 
       <div class="project-card" data-category="ai">
-        <img alt="Flight Delay Prediction" class="project-image" src="assets/Projects/fdp.png" />
         <div class="project-content">
           <div class="project-header">
             <h3 class="project-title">Flight Delay Prediction</h3>
             <a href="https://github.com/lcyarlagadda/DDD-Flight-Delay-Prediction" class="github-link" target="_blank">
               <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" fill="currentColor"/>
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  fill="currentColor" />
               </svg>
             </a>
           </div>
-          <p class="project-description">Machine learning models to predict flight delays based on weather and airline data.</p>
+          <p class="project-description">Machine learning models to predict flight delays based on weather and airline
+            data.</p>
           <div class="tech-stack">
             <span class="tech-tag">Python</span>
             <span class="tech-tag">Pandas</span>
@@ -472,73 +388,42 @@
       <div class="contact-header">
         <div class="contact-label">GET IN TOUCH</div>
         <h2 class="contact-title">
-          I would love to hear from you. Whether you have a question, are exploring potential employment opportunities, or are interested in collaboration, please feel free to reach out to me.
+          I would love to hear from you. If you want to build something fun, challenging and meaningful, let's connect!
         </h2>
       </div>
 
-      <div class="contact-details">
-        <div class="contact-block">
-          <div class="contact-subheading">REACH ME AT</div>
-          <p class="contact-text">lcyarlagadda@gmail.com</p>
-          <p class="contact-text">+1 (740) 803-6355</p>
-        </div>
+      <div class="contact-cards">
+        <a href="mailto:lcyarlagadda@gmail.com" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Email</h3>
+          <p>Send a message</p>
+        </a>
 
-        <div class="contact-block">
-          <div class="contact-subheading">SOCIAL</div>
-          <p class="contact-text">
-            <a href="https://github.com/lcyarlagadda" target="_blank">Github</a>,
-            <a href="https://www.linkedin.com/in/lakshmi-chandrika-yarlagadda-8608b21b1/" target="_blank">LinkedIn</a>
-          </p>
-        </div>
+        <a href="https://www.linkedin.com/in/lakshmi-chandrika-yarlagadda-8608b21b1/" target="_blank" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <h3>LinkedIn</h3>
+          <p>Connect with me</p>
+        </a>
 
-        <div class="contact-button">
-          <a href="mailto:lcyarlagadda@gmail.com" class="say-hello-btn">SAY HELLO</a>
-        </div>
+        <a href="https://github.com/lcyarlagadda" target="_blank" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" stroke="currentColor" stroke-width="0.5"/>
+          </svg>
+          <h3>GitHub</h3>
+          <p>View my code</p>
+        </a>
       </div>
     </div>
   </section>
-
-  <footer class="footer">
-    <div class="footer-container">
-      <p>
-        © Design inspired by
-        <a href="https://styleshout.com" target="_blank">StyleShout</a>
-        Distribution By
-        <a href="https://themewagon.com" target="_blank">Themewagon</a>
-      </p>
-      <p>
-        Images generated by
-        <a href="https://openai.com/sora" target="_blank">Sora AI by OpenAI</a>
-      </p>
-      <a href="#hero" class="back-to-top">↑</a>
-    </div>
-  </footer>
-
-  <div id="project-modal-overlay" class="project-modal-overlay">
-    <div class="project-modal">
-      <button class="project-modal-close" aria-label="Close">&times;</button>
-      <div class="project-modal-content">
-        <img src="" alt="" class="project-modal-img" />
-        <div class="project-modal-divider"></div>
-        <div class="project-modal-text">
-          <div class="project-modal-title"></div>
-          <div class="project-modal-desc"></div>
-          <div class="project-modal-tags"></div>
-          <div class="project-modal-links">
-            <a href="#" class="github-btn" target="_blank" rel="noopener">View Code</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </div>
-
 
   <script src="script.js"></script>
 
 </body>
 
 </html>
-
-
