@@ -118,6 +118,8 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 document.querySelectorAll('.fade-left').forEach(el => observer.observe(el));
+document.querySelectorAll('.experience-header').forEach(el => observer.observe(el));
+document.querySelectorAll('.experience-item').forEach(el => observer.observe(el));
 
 // ========== SIDEBAR TOGGLE ==========
 
