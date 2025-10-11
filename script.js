@@ -56,21 +56,45 @@ function updateActiveLinks(currentId) {
 
 // Find current section in view
 function getCurrentSection() {
-  const scrollPos = window.scrollY + 150;
+  const scrollPos = window.scrollY + 100;
+  const sections = document.querySelectorAll('section[id]');
   let foundId = null;
-  document.querySelectorAll('section[id]').forEach(section => {
+  
+  // Check each section
+  for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
     const top = section.offsetTop;
     const bottom = top + section.offsetHeight;
+    
+    // If we're within this section
     if (scrollPos >= top && scrollPos < bottom) {
       foundId = section.id;
+      break;
     }
-  });
+    
+    // Special case for the last section (contact) - if we're near the bottom
+    if (i === sections.length - 1 && scrollPos >= top - 50) {
+      foundId = section.id;
+      break;
+    }
+  }
+  
+  // If we're at the very bottom of the page, highlight contact
+  if (!foundId && window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+    foundId = 'contact';
+  }
+  
   return foundId;
 }
 
 // On scroll: update highlight and navbar shadow
 window.addEventListener('scroll', () => {
-  updateActiveLinks(getCurrentSection());
+  const currentSection = getCurrentSection();
+  updateActiveLinks(currentSection);
+  
+  // Debug: log current section (remove in production)
+  // console.log('Current section:', currentSection, 'Scroll position:', window.scrollY);
+  
   // Navbar shadow
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 20) {
