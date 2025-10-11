@@ -495,7 +495,7 @@ html {
 
 .about-label {
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   letter-spacing: 3px;
   color: var(--accent-primary);
   font-weight: 700;
@@ -1344,7 +1344,7 @@ body {
   }
   
   .experience-title-main {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
   }
   
@@ -1388,7 +1388,7 @@ body {
 
 .contact-label {
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.3rem;
   letter-spacing: 2.5px;
   color: var(--accent-primary);
   margin-bottom: 15px;
@@ -2005,7 +2005,7 @@ body {
 }
 
 .skills-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 800;
   margin-bottom: 40px;
   font-family: 'Montserrat', sans-serif;
@@ -2074,7 +2074,7 @@ body {
   }
   
   .skills-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   .skills-scroll-container {
@@ -2228,7 +2228,7 @@ body {
 
 .experience-title-main {
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   letter-spacing: 3px;
   color: var(--accent-primary);
   font-weight: 700;
@@ -2378,7 +2378,7 @@ body {
 
 .section-label{
   text-transform: uppercase;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   letter-spacing: 3px;
   color: var(--accent-primary);
   font-weight: 700;
@@ -2684,7 +2684,7 @@ body {
   .contact-label,
   .timeline-heading,
   .experience-title-main {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
   }
   
