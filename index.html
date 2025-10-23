@@ -4,14 +4,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lakshmi Chandrika Yarlagadda | Portfolio</title>
+  <title>Chandrika.dev</title>
   <link rel="icon" type="image/svg+xml" id="favicon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cdefs%3E%3ClinearGradient id='gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2364748b;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23475569;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='2' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='30' cy='30' r='28' fill='%23f8fafc' stroke='url(%23gradient)' stroke-width='2'/%3E%3Ctext x='30' y='38' font-family='Montserrat, sans-serif' font-size='20' font-weight='700' text-anchor='middle' fill='url(%23gradient)' filter='url(%23glow)'%3ELC%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Devicons for technology icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-text">
+        <span class="loading-line">Hi, I'm Chandrika</span>
+      </div>
+      <div class="loading-subtitle">
+        <span>Full Stack Developer</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header>
     <nav class="navbar">
       <div class="nav-container">
@@ -30,7 +47,10 @@
       <span class="sun-icon">☀</span>
       <span class="moon-icon">☾</span>
     </button>
+  </header>
 
+  <!-- Main Content -->
+  <div id="main-content" class="main-content">
     <div id="sidebar" class="sidebar">
       <div class="sidebar-header">
         <button class="theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle theme">
@@ -62,7 +82,7 @@
         a full-stack developer<br />
       </h1>
       <p class="hero-subtitle">
-        Currently seeking <span id="typing-role"></span> roles.
+        Actively seeking <span id="typing-role"></span> developer roles.
       </p>
     </div>
   </section>
@@ -100,33 +120,317 @@
 
   <section id="skills" class="skills-section">
     <div class="skills-header fade-up delay-1">
-      <p class="section-label">SKILLS</p>
+      <p class="section-label">MY STACK</p>
     </div>
     <div class="skills-scroll-container">
       <div class="skills-scroll-wrapper">
+        <!-- Languages -->
       <div class="skill-card">
-        <p class="skill-header">Languages</p>
-          <p>C#, Java, JavaScript, TypeScript, Python, Go, HTML, CSS, SQL</p>
+          <div class="skill-header">
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-csharp-plain"></i>
+              </div>
+              <span>C#</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-cplusplus-plain"></i>
+              </div>
+              <span>C++</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-java-plain"></i>
+              </div>
+              <span>Java</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-javascript-plain"></i>
+              </div>
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-typescript-plain"></i>
+              </div>
+              <span>TypeScript</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-python-plain"></i>
+              </div>
+              <span>Python</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-go-plain"></i>
+              </div>
+              <span>Go</span>
+            </div>
+          </div>
       </div>
+
+        <!-- Frontend -->
       <div class="skill-card">
-        <p class="skill-header">Frontend</p>
-          <p>React.js, Redux, Tailwind, Ant Design, single-spa, RxJS</p>
+          <div class="skill-header">
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-react-original"></i>
+              </div>
+              <span>React.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-redux-original"></i>
+              </div>
+              <span>Redux</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-react-original"></i>
+              </div>
+              <span>React native</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-tailwindcss-plain"></i>
+              </div>
+              <span>Tailwind</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-antdesign-plain"></i>
+              </div>
+              <span>Ant Design</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-html5-plain"></i>
+              </div>
+              <span>HTML</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-css3-plain"></i>
+              </div>
+              <span>CSS</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-sass-plain"></i>
+              </div>
+              <span>SASS</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-rxjs-plain"></i>
+              </div>
+              <span>Rxjs</span>
+            </div>
+          </div>
       </div>
+
+        <!-- Backend -->
       <div class="skill-card">
-        <p class="skill-header">Backend</p>
-          <p>.NET Core, Entity Framework, Node.js, Spring Boot, REST, GraphQL, Shell</p>
+          <div class="skill-header">
+            <h3>Backend</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-dotnetcore-plain"></i>
+              </div>
+              <span>.NET Core</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-nodejs-plain"></i>
+              </div>
+              <span>Node.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-express-original"></i>
+              </div>
+              <span>Express.js</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-spring-plain"></i>
+              </div>
+              <span>Spring Boot</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="6" width="28" height="20" rx="2" fill="currentColor" opacity="0.1"/>
+                  <rect x="2" y="6" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 12h16M8 16h12M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="6" cy="12" r="1" fill="currentColor"/>
+                  <circle cx="6" cy="16" r="1" fill="currentColor"/>
+                  <circle cx="6" cy="20" r="1" fill="currentColor"/>
+                  <path d="M22 12h2v2h-2zM22 16h2v2h-2zM22 20h2v2h-2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span>REST</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-graphql-plain"></i>
+              </div>
+              <span>GraphQL</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-apachekafka-plain"></i>
+              </div>
+              <span>Apache Kafka</span>
+            </div>
+          </div>
       </div>
+
+        <!-- Data & Messaging -->
       <div class="skill-card">
-        <p class="skill-header">Data & Messaging</p>
-          <p>SQL Server, Cassandra, MongoDB, Postgres, Firebase, Kafka, Redis, Socket.IO, Elasticsearch</p>
+          <div class="skill-header">
+            <h3>Data & Messaging</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-microsoftsqlserver-plain"></i>
+              </div>
+              <span>SQL Server</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-cassandra-plain"></i>
+              </div>
+              <span>Cassandra</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-mongodb-plain"></i>
+              </div>
+              <span>MongoDB</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-postgresql-plain"></i>
+              </div>
+              <span>Postgres</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-redis-plain"></i>
+              </div>
+              <span>Redis</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-socketio-plain"></i>
+              </div>
+              <span>Socket.IO</span>
+            </div>
+          </div>
       </div>
+
+        <!-- Tools & Testing -->
       <div class="skill-card">
-          <p class="skill-header">Tools and Testing</p>
-          <p>NUnit, JUnit, Jest, Cypress, Prometheus, Grafana, ELK Stack, Azure Monitor</p>
+          <div class="skill-header">
+            <h3>Testing & Monitoring</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-jest-plain"></i>
+              </div>
+              <span>Jest</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-cypressio-plain"></i>
+              </div>
+              <span>Cypress</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-sonarqube-plain"></i>
+              </div>
+              <span>Sonarqube</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-prometheus-plain"></i>
+              </div>
+              <span>Prometheus</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-grafana-plain"></i>
+              </div>
+              <span>Grafana</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-elasticsearch-plain"></i>
+              </div>
+              <span>ELK Stack</span>
+            </div>
       </div>
+        </div>
+
+        <!-- Cloud & DevOps -->
       <div class="skill-card">
-        <p class="skill-header">Cloud & DevOps</p>
-          <p>Azure, AWS, Docker, Kubernetes, Git, SVN</p>
+          <div class="skill-header">
+            <h3>Cloud & DevOps</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-azure-plain"></i>
+              </div>
+              <span>Azure</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-amazonwebservices-plain"></i>
+              </div>
+              <span>AWS</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-docker-plain"></i>
+              </div>
+              <span>Docker</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-kubernetes-plain"></i>
+              </div>
+              <span>Kubernetes</span>
+            </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-git-plain"></i>
+              </div>
+              <span>Git</span>
+      </div>
+            <div class="skill-item">
+              <div class="skill-icon">
+                <i class="devicon-github-plain"></i>
+      </div>
+              <span>Github</span>
+        </div>
+      </div>
+        </div>
       </div>
     </div>
   </section>
@@ -139,47 +443,27 @@
     
     <div class="experience-list">
       <div class="experience-item">
-        <div class="experience-item-header">
-          <div class="experience-job-info">
-            <h3 class="job-title">Module Lead</h3>
-            <p class="company-location">Valuelabs, Hyderabad, India</p>
-          </div>
-          <div class="experience-dates">Apr 2023 – Dec 2023</div>
-        </div>
-        <div class="experience-divider"></div>
+        <div class="company-name">Valuelabs</div>
+        <div class="job-title">Module Lead</div>
+        <div class="experience-dates">Apr 2023 – Dec 2023</div>
       </div>
 
       <div class="experience-item">
-        <div class="experience-item-header">
-          <div class="experience-job-info">
-            <h3 class="job-title">Senior Software Engineer</h3>
-            <p class="company-location">Valuelabs, Hyderabad, India</p>
-          </div>
-          <div class="experience-dates">Jun 2022 – Apr 2023</div>
-        </div>
-        <div class="experience-divider"></div>
+        <div class="company-name">Valuelabs</div>
+        <div class="job-title">Senior Software Engineer</div>
+        <div class="experience-dates">Jun 2022 – Apr 2023</div>
       </div>
 
       <div class="experience-item">
-        <div class="experience-item-header">
-          <div class="experience-job-info">
-            <h3 class="job-title">Software Engineer</h3>
-            <p class="company-location">Valuelabs, Hyderabad, India</p>
-          </div>
-          <div class="experience-dates">Jun 2020 – Jun 2022</div>
-        </div>
-        <div class="experience-divider"></div>
-      </div>
+        <div class="company-name">Valuelabs</div>
+        <div class="job-title">Software Engineer</div>
+        <div class="experience-dates">Jun 2020 – Jun 2022</div>
+    </div>
 
       <div class="experience-item">
-        <div class="experience-item-header">
-          <div class="experience-job-info">
-            <h3 class="job-title">Software Developer Intern</h3>
-            <p class="company-location">Valuelabs, Hyderabad, India</p>
-          </div>
-          <div class="experience-dates">Dec 2019 – May 2020</div>
-        </div>
-        <div class="experience-divider"></div>
+        <div class="company-name">Valuelabs</div>
+        <div class="job-title">Software Developer Intern</div>
+        <div class="experience-dates">Dec 2019 – May 2020</div>
       </div>
     </div>
   </section>
@@ -421,6 +705,8 @@
       </div>
     </div>
   </section>
+  </div> <!-- End main-content -->
+
 
   <script src="script.js"></script>
 

@@ -125,6 +125,46 @@ window.addEventListener('load', () => {
   updateActiveLinks(getCurrentSection());
 });
 
+// ========== LOADING SCREEN ==========
+
+// Show loading screen for 2 seconds, then animate to main content
+window.addEventListener('load', function() {
+  const loadingScreen = document.getElementById('loading-screen');
+  const mainContent = document.getElementById('main-content');
+  const themeToggle = document.getElementById('themeToggle');
+  
+  // Ensure theme toggle is visible immediately
+  if (themeToggle) {
+    themeToggle.style.display = 'flex';
+    themeToggle.style.opacity = '1';
+    themeToggle.style.visibility = 'visible';
+    themeToggle.style.zIndex = '10000';
+  }
+  
+  // After 2 seconds, hide loading screen and show main content
+  setTimeout(() => {
+    loadingScreen.classList.add('hide');
+    mainContent.classList.add('show');
+    
+    // Remove loading screen from DOM after animation completes
+    setTimeout(() => {
+      loadingScreen.style.display = 'none';
+    }, 1000); // Match the CSS transition duration
+  }, 2000);
+});
+
+// Ensure theme toggle is visible immediately on DOM ready
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.style.display = 'flex';
+    themeToggle.style.opacity = '1';
+    themeToggle.style.visibility = 'visible';
+    themeToggle.style.zIndex = '10000';
+  }
+});
+
+
 // ========== FADE-UP/LEFT ANIMATIONS ==========
 
 const observer = new IntersectionObserver(
@@ -132,8 +172,16 @@ const observer = new IntersectionObserver(
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
+        // For skill cards and items, also add animate class
+        if (entry.target.classList.contains('skill-card') || entry.target.classList.contains('skill-item')) {
+          entry.target.classList.add("animate");
+        }
       } else {
         entry.target.classList.remove("show");
+        // Keep animate class for skill elements once triggered
+        if (!entry.target.classList.contains('skill-card') && !entry.target.classList.contains('skill-item')) {
+          entry.target.classList.remove("animate");
+        }
       }
     });
   },
@@ -144,6 +192,10 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 document.querySelectorAll('.fade-left').forEach(el => observer.observe(el));
 document.querySelectorAll('.experience-header').forEach(el => observer.observe(el));
 document.querySelectorAll('.experience-item').forEach(el => observer.observe(el));
+
+// Add skill cards and skill items to observer
+document.querySelectorAll('.skill-card').forEach(el => observer.observe(el));
+document.querySelectorAll('.skill-item').forEach(el => observer.observe(el));
 
 // ========== SIDEBAR TOGGLE ==========
 
