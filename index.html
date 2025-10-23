@@ -32,7 +32,7 @@
   <header>
     <nav class="navbar">
       <div class="nav-container">
-        <div class="hamburger" onclick="toggleSidebar()">☰</div>
+        <div class="hamburger" onclick="toggleMobileSidebar()">☰</div>
         <ul class="nav-links desktop-only">
           <li><a href="#hero">INTRO</a></li>
           <li><a href="#about">ABOUT</a></li>
@@ -49,26 +49,25 @@
     </button>
   </header>
 
+  <!-- Mobile Sidebar -->
+  <div id="mobile-sidebar" class="mobile-sidebar">
+    <div class="mobile-sidebar-header">
+      <button class="mobile-sidebar-close" onclick="toggleMobileSidebar()">×</button>
+    </div>
+    <nav class="mobile-sidebar-nav">
+      <ul>
+        <li><a href="#hero" onclick="toggleMobileSidebar()">INTRO</a></li>
+        <li><a href="#about" onclick="toggleMobileSidebar()">ABOUT</a></li>
+        <li><a href="#skills" onclick="toggleMobileSidebar()">SKILLS</a></li>
+        <li><a href="#experience" onclick="toggleMobileSidebar()">WORK</a></li>
+        <li><a href="#projects" onclick="toggleMobileSidebar()">PROJECTS</a></li>
+        <li><a href="#contact" onclick="toggleMobileSidebar()">SAY HELLO</a></li>
+      </ul>
+    </nav>
+  </div>
+
   <!-- Main Content -->
   <div id="main-content" class="main-content">
-    <div id="sidebar" class="sidebar">
-      <div class="sidebar-header">
-        <button class="theme-toggle-mobile" id="themeToggleMobile" aria-label="Toggle theme">
-          <span class="sun-icon">☀</span>
-          <span class="moon-icon">☾</span>
-        </button>
-        <span class="close-btn" onclick="toggleSidebar()">×</span>
-      </div>
-      <ul>
-        <li><a href="#hero" onclick="toggleSidebar()">INTRO</a></li>
-        <li><a href="#about" onclick="toggleSidebar()">ABOUT</a></li>
-        <li><a href="#skills" onclick="toggleSidebar()">SKILLS</a></li>
-        <li><a href="#experience" onclick="toggleSidebar()">WORK</a></li>
-        <li><a href="#projects" onclick="toggleSidebar()">PROJECTS</a></li>
-        <li><a href="#contact" onclick="toggleSidebar()">SAY HELLO</a></li>
-      </ul>
-    </div>
-  </header>
 
   <!-- Hero -->
   <section id="hero" class="hero-section fade-left">

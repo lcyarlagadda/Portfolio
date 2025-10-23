@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ========== NAVBAR & SIDEBAR ACTIVE HIGHLIGHT ==========
 
-// Helper to update .active on both navbar and sidebar links
+// Helper to update .active on both navbar and mobile sidebar links
 function updateActiveLinks(currentId) {
-  document.querySelectorAll('.navbar a, .sidebar a').forEach(link => {
+  document.querySelectorAll('.navbar a, .mobile-sidebar-nav a').forEach(link => {
     link.classList.remove('active');
     if (currentId && link.getAttribute('href') === '#' + currentId) {
       link.classList.add('active');
@@ -105,17 +105,13 @@ window.addEventListener('scroll', () => {
 });
 
 // On click: scroll and let scroll event handle the active state
-document.querySelectorAll('.navbar a[href^="#"], .sidebar a[href^="#"]').forEach(link => {
+document.querySelectorAll('.navbar a[href^="#"], .mobile-sidebar-nav a[href^="#"]').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();
     const targetId = this.getAttribute('href').replace('#', '');
     const target = document.getElementById(targetId);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    // If this is in sidebar, close sidebar on click (for mobile)
-    if (this.closest('.sidebar')) {
-      document.getElementById('sidebar').style.display = 'none';
     }
   });
 });
@@ -197,15 +193,50 @@ document.querySelectorAll('.experience-item').forEach(el => observer.observe(el)
 document.querySelectorAll('.skill-card').forEach(el => observer.observe(el));
 document.querySelectorAll('.skill-item').forEach(el => observer.observe(el));
 
-// ========== SIDEBAR TOGGLE ==========
+// ========== MOBILE SIDEBAR TOGGLE ==========
 
-function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
+function toggleMobileSidebar() {
+  const sidebar = document.getElementById('mobile-sidebar');
+  const overlay = document.getElementById('mobile-sidebar-overlay');
+  
   if (sidebar) {
-    sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+    const isOpen = sidebar.classList.contains('open');
+    
+    if (isOpen) {
+      // Close sidebar
+      sidebar.classList.remove('open');
+      document.body.style.overflow = '';
+      
+      // Hide overlay if it exists
+      if (overlay) {
+        overlay.classList.remove('show');
+      }
+    } else {
+      // Open sidebar
+      sidebar.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      
+      // Show overlay if it exists
+      if (overlay) {
+        overlay.classList.add('show');
+      }
+    }
   }
 }
 
+// Create overlay element if it doesn't exist
+function createMobileSidebarOverlay() {
+  if (!document.getElementById('mobile-sidebar-overlay')) {
+    const overlay = document.createElement('div');
+    overlay.id = 'mobile-sidebar-overlay';
+    overlay.className = 'mobile-sidebar-overlay';
+    overlay.onclick = toggleMobileSidebar;
+    document.body.appendChild(overlay);
+  }
+}
+
+// Initialize overlay on page load
+document.addEventListener('DOMContentLoaded', createMobileSidebarOverlay);
 
 // ========== FADE-LEFT ON SCROLL ==========
 
