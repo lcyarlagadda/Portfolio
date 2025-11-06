@@ -1800,6 +1800,7 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   flex: 1;
+  line-height: 1.2;
 }
 
 .project-description {
@@ -1823,6 +1824,13 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 12px;
+  gap: 10px;
+}
+
+.project-header .github-link {
+  margin-top: 0;
+  align-self: flex-start;
+  flex-shrink: 0;
 }
 
 .tech-tag {
