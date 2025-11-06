@@ -16,6 +16,9 @@
 </head>
 
 <body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   <!-- Loading Screen -->
   <div id="loading-screen" class="loading-screen">
     <div class="loading-content">
@@ -30,14 +33,17 @@
 
   <!-- Header -->
   <header>
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
       <div class="nav-container">
-        <div class="hamburger" onclick="toggleMobileSidebar()">☰</div>
-        <ul class="nav-links desktop-only">
+        <button class="hamburger" onclick="toggleMobileSidebar()" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-sidebar">
+          <span aria-hidden="true">☰</span>
+        </button>
+        <ul class="nav-links desktop-only" role="list">
           <li><a href="#hero">INTRO</a></li>
           <li><a href="#about">ABOUT</a></li>
           <li><a href="#skills">SKILLS</a></li>
           <li><a href="#experience">WORK</a></li>
+          <!-- <li><a href="#volunteering">VOLUNTEERING</a></li> -->
           <li><a href="#projects">PROJECTS</a></li>
           <li><a href="#contact">SAY HELLO</a></li>
         </ul>
@@ -50,16 +56,17 @@
   </header>
 
   <!-- Mobile Sidebar -->
-  <div id="mobile-sidebar" class="mobile-sidebar">
+  <div id="mobile-sidebar" class="mobile-sidebar" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="mobile-sidebar-nav">
     <div class="mobile-sidebar-header">
-      <button class="mobile-sidebar-close" onclick="toggleMobileSidebar()">×</button>
+      <button class="mobile-sidebar-close" onclick="toggleMobileSidebar()" aria-label="Close navigation menu">×</button>
     </div>
-    <nav class="mobile-sidebar-nav">
+    <nav id="mobile-sidebar-nav" class="mobile-sidebar-nav" aria-label="Main navigation">
       <ul>
         <li><a href="#hero" onclick="toggleMobileSidebar()">INTRO</a></li>
         <li><a href="#about" onclick="toggleMobileSidebar()">ABOUT</a></li>
         <li><a href="#skills" onclick="toggleMobileSidebar()">SKILLS</a></li>
         <li><a href="#experience" onclick="toggleMobileSidebar()">WORK</a></li>
+        <!-- <li><a href="#volunteering" onclick="toggleMobileSidebar()">VOLUNTEERING</a></li> -->
         <li><a href="#projects" onclick="toggleMobileSidebar()">PROJECTS</a></li>
         <li><a href="#contact" onclick="toggleMobileSidebar()">SAY HELLO</a></li>
       </ul>
@@ -70,13 +77,13 @@
   <div id="main-content" class="main-content">
 
     <!-- Hero -->
-    <section id="hero" class="hero-section fade-left">
+    <section id="hero" class="hero-section fade-left" aria-labelledby="hero-heading">
       <div class="hero-box">
         <div class="hero-label-wrapper">
           <span class="hero-line"></span>
           <div class="hero-label">BOOT. REACT. SHIP. REPEAT.</div>
         </div>
-        <h1 class="hero-title">
+        <h1 id="hero-heading" class="hero-title">
           Hi, I am Chandrika,<br />
           a full-stack developer<br />
         </h1>
@@ -86,7 +93,7 @@
       </div>
     </section>
 
-    <section id="about" class="about-section">
+    <section id="about" class="about-section" aria-labelledby="about-heading">
       <div class="about-box">
         <div class="about-image">
           <div class="profile-pic-container">
@@ -98,7 +105,7 @@
         <div class="about-content fade-up delay-1">
           <div class="about-label-wrapper">
             <span class="about-line"></span>
-            <span class="about-label">ABOUT</span>
+            <h2 id="about-heading" class="about-label">ABOUT</h2>
           </div>
           <p class="about-text">
             Computer Science graduate at Penn State, experienced in delivering full-stack solutions built
@@ -119,9 +126,9 @@
       </div>
     </section>
 
-    <section id="skills" class="skills-section">
+    <section id="skills" class="skills-section" aria-labelledby="skills-heading">
       <div class="skills-header fade-up delay-1">
-        <p class="section-label">MY STACK</p>
+        <h2 id="skills-heading" class="section-label">MY STACK</h2>
       </div>
       <div class="skills-scroll-container">
         <div class="skills-scroll-wrapper">
@@ -271,7 +278,7 @@
               </div>
               <div class="skill-item">
                 <div class="skill-icon">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <rect x="2" y="6" width="28" height="20" rx="2" fill="currentColor" opacity="0.1" />
                     <rect x="2" y="6" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2" />
                     <path d="M8 12h16M8 16h12M8 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -437,9 +444,9 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience-section">
+    <section id="experience" class="experience-section" aria-labelledby="experience-heading">
       <div class="experience-header">
-        <h2 class="experience-title-main">WORK EXPERIENCE</h2>
+        <h2 id="experience-heading" class="experience-title-main">WORK EXPERIENCE</h2>
       </div>
 
       <div class="experience-list">
@@ -470,15 +477,30 @@
     </section>
     <!-- </section> -->
 
+    <!-- Volunteering Section -->
+    <!-- <section id="volunteering" class="volunteering-section">
+      <div class="volunteering-header">
+        <h2 class="volunteering-title-main">VOLUNTEERING</h2>
+      </div>
+
+      <div class="volunteering-list">
+        <div class="volunteering-item">
+          <div class="organization-name">Saibaba Temple, Ohio</div>
+          <div class="volunteer-role">Web development and site maintenance</div>
+          <div class="volunteering-description">Nov 2025 - Present</div>
+        </div>
+      </div>
+    </section> -->
+
     <!-- Projects -->
-    <section id="projects" class="projects-section">
+    <section id="projects" class="projects-section" aria-labelledby="projects-heading">
       <div class="projects-header fade-up delay-1">
-        <div class="section-label">PROJECTS</div>
+        <h2 id="projects-heading" class="section-label">PROJECTS</h2>
         <div class="project-filters">
-          <button class="filter-btn active" data-filter="favourites">Favorites</button>
-          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-          <button class="filter-btn" data-filter="systems">Systems</button>
-          <button class="filter-btn" data-filter="ai">AI/ML</button>
+          <button class="filter-btn active" data-filter="favourites" aria-label="Filter projects by favorites" aria-pressed="true">Favorites</button>
+          <button class="filter-btn" data-filter="fullstack" aria-label="Filter projects by full stack" aria-pressed="false">Full Stack</button>
+          <button class="filter-btn" data-filter="systems" aria-label="Filter projects by systems" aria-pressed="false">Systems</button>
+          <button class="filter-btn" data-filter="ai" aria-label="Filter projects by AI/ML" aria-pressed="false">AI/ML</button>
         </div>
       </div>
       <div class="projects-grid">
@@ -487,8 +509,8 @@
           <div class="project-content">
             <div class="project-header">
               <h3 class="project-title">Ticket Tracker</h3>
-              <a href="https://github.com/lcyarlagadda/TicketTracker" class="github-link" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a href="https://github.com/lcyarlagadda/TicketTracker" class="github-link" target="_blank" aria-label="View Ticket Tracker project on GitHub" rel="noopener noreferrer">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                     fill="currentColor" />
@@ -511,8 +533,8 @@
           <div class="project-content">
             <div class="project-header">
               <h3 class="project-title">Chat Application</h3>
-              <a href="https://github.com/lcyarlagadda/ChatApplication" class="github-link" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a href="https://github.com/lcyarlagadda/ChatApplication" class="github-link" target="_blank" aria-label="View Chat Application project on GitHub" rel="noopener noreferrer">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                     fill="currentColor" />
@@ -557,7 +579,7 @@
             <div class="project-header">
               <h3 class="project-title">Parallel File System</h3>
               <span class="private-repo-tag">
-                <svg class="lock-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="lock-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" stroke-width="2" />
                   <path d="M8 11V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V11" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" />
@@ -576,12 +598,12 @@
           </div>
         </div>
 
-        <div class="project-card" data-category="systems">
+        <!-- <div class="project-card" data-category="systems">
           <div class="project-content">
             <div class="project-header">
               <h3 class="project-title">Paxos Consensus Implementation</h3>
-              <a href="https://github.com/lcyarlagadda/OS-Malloc-Lab" class="github-link" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a href="https://github.com/lcyarlagadda/OS-Malloc-Lab" class="github-link" target="_blank" aria-label="View Paxos Consensus Implementation project on GitHub" rel="noopener noreferrer">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                     fill="currentColor" />
@@ -598,14 +620,14 @@
               <span class="tech-tag">RPC / Networking</span>
             </div>
           </div>
-        </div>
+        </div> -->
         
         <div class="project-card" data-category="systems">
           <div class="project-content">
             <div class="project-header">
               <h3 class="project-title">Memory management</h3>
-              <a href="https://github.com/lcyarlagadda/OS-Malloc-Lab" class="github-link" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a href="https://github.com/lcyarlagadda/OS-Malloc-Lab" class="github-link" target="_blank" aria-label="View Memory management project on GitHub" rel="noopener noreferrer">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                     fill="currentColor" />
@@ -627,8 +649,8 @@
           <div class="project-content">
             <div class="project-header">
               <h3 class="project-title">Chat With PDFs</h3>
-              <a href="https://github.com/lcyarlagadda/ChatWithPDFs" class="github-link" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a href="https://github.com/lcyarlagadda/ChatWithPDFs" class="github-link" target="_blank" aria-label="View Chat With PDFs project on GitHub" rel="noopener noreferrer">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                     fill="currentColor" />
@@ -652,8 +674,8 @@
           <div class="project-content">
             <div class="project-header">
               <h3 class="project-title">Customer Support Email Agents</h3>
-              <a href="https://github.com/lcyarlagadda/CustomerSupportEmailAgents" class="github-link" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a href="https://github.com/lcyarlagadda/CustomerSupportEmailAgents" class="github-link" target="_blank" aria-label="View Customer Support Email Agents project on GitHub" rel="noopener noreferrer">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                     fill="currentColor" />
@@ -679,7 +701,7 @@
               <h3 class="project-title">Classification of LLM generated outputs</h3>
               <a href="https://github.com/lcyarlagadda/ML-LLM-Generated-Text-Classification" class="github-link"
                 target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="github-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path
                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                     fill="currentColor" />
@@ -700,20 +722,20 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact-section">
+  <!-- Contact -->
+  <section id="contact" class="contact-section" aria-labelledby="contact-heading">
       <div class="contact-container fade-left delay-1">
         <div class="contact-header">
-          <div class="contact-label">GET IN TOUCH</div>
-          <h2 class="contact-title">
+          <h2 id="contact-heading" class="contact-label">GET IN TOUCH</h2>
+          <p class="contact-title">
             I would love to hear from you. If you want to build something fun, challenging and meaningful, let's
             connect!
-          </h2>
+          </p>
         </div>
 
         <div class="contact-cards">
-          <a href="mailto:lcyarlagadda@gmail.com" class="contact-card">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <a href="mailto:lcyarlagadda@gmail.com" class="contact-card" aria-label="Send email to lcyarlagadda@gmail.com">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -724,8 +746,8 @@
           </a>
 
           <a href="https://www.linkedin.com/in/lakshmi-chandrika-yarlagadda-8608b21b1/" target="_blank"
-            class="contact-card">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            class="contact-card" aria-label="Connect with me on LinkedIn" rel="noopener noreferrer">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2" />
@@ -734,8 +756,8 @@
             <p>Connect with me</p>
           </a>
 
-          <a href="https://github.com/lcyarlagadda" target="_blank" class="contact-card">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <a href="https://github.com/lcyarlagadda" target="_blank" class="contact-card" aria-label="View my code on GitHub" rel="noopener noreferrer">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path
                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                 stroke="currentColor" stroke-width="0.5" />

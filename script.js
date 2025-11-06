@@ -188,6 +188,8 @@ document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 document.querySelectorAll('.fade-left').forEach(el => observer.observe(el));
 document.querySelectorAll('.experience-header').forEach(el => observer.observe(el));
 document.querySelectorAll('.experience-item').forEach(el => observer.observe(el));
+document.querySelectorAll('.volunteering-header').forEach(el => observer.observe(el));
+document.querySelectorAll('.volunteering-item').forEach(el => observer.observe(el));
 
 // Add skill cards and skill items to observer
 document.querySelectorAll('.skill-card').forEach(el => observer.observe(el));
@@ -198,6 +200,7 @@ document.querySelectorAll('.skill-item').forEach(el => observer.observe(el));
 function toggleMobileSidebar() {
   const sidebar = document.getElementById('mobile-sidebar');
   const overlay = document.getElementById('mobile-sidebar-overlay');
+  const hamburger = document.querySelector('.hamburger');
   
   if (sidebar) {
     const isOpen = sidebar.classList.contains('open');
@@ -211,6 +214,15 @@ function toggleMobileSidebar() {
       if (overlay) {
         overlay.classList.remove('show');
       }
+      
+      // Update ARIA states
+      if (hamburger) {
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+      sidebar.setAttribute('aria-hidden', 'true');
+      if (overlay) {
+        overlay.setAttribute('aria-hidden', 'true');
+      }
     } else {
       // Open sidebar
       sidebar.classList.add('open');
@@ -220,9 +232,32 @@ function toggleMobileSidebar() {
       if (overlay) {
         overlay.classList.add('show');
       }
+      
+      // Update ARIA states
+      if (hamburger) {
+        hamburger.setAttribute('aria-expanded', 'true');
+      }
+      sidebar.setAttribute('aria-hidden', 'false');
+      if (overlay) {
+        overlay.setAttribute('aria-hidden', 'false');
+      }
+      
+      // Focus on close button for keyboard navigation
+      const closeButton = sidebar.querySelector('.mobile-sidebar-close');
+      if (closeButton) {
+        closeButton.focus();
+      }
     }
   }
 }
+
+// Close sidebar on Escape key press
+document.addEventListener('keydown', (e) => {
+  const sidebar = document.getElementById('mobile-sidebar');
+  if (e.key === 'Escape' && sidebar && sidebar.classList.contains('open')) {
+    toggleMobileSidebar();
+  }
+});
 
 // Create overlay element if it doesn't exist
 function createMobileSidebarOverlay() {
@@ -230,13 +265,31 @@ function createMobileSidebarOverlay() {
     const overlay = document.createElement('div');
     overlay.id = 'mobile-sidebar-overlay';
     overlay.className = 'mobile-sidebar-overlay';
+    overlay.setAttribute('aria-hidden', 'true');
     overlay.onclick = toggleMobileSidebar;
     document.body.appendChild(overlay);
   }
 }
 
-// Initialize overlay on page load
-document.addEventListener('DOMContentLoaded', createMobileSidebarOverlay);
+// Initialize overlay and ARIA states on page load
+document.addEventListener('DOMContentLoaded', () => {
+  createMobileSidebarOverlay();
+  
+  // Set initial ARIA states
+  const sidebar = document.getElementById('mobile-sidebar');
+  const overlay = document.getElementById('mobile-sidebar-overlay');
+  const hamburger = document.querySelector('.hamburger');
+  
+  if (sidebar) {
+    sidebar.setAttribute('aria-hidden', 'true');
+  }
+  if (overlay) {
+    overlay.setAttribute('aria-hidden', 'true');
+  }
+  if (hamburger) {
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+});
 
 // ========== FADE-LEFT ON SCROLL ==========
 
@@ -318,9 +371,21 @@ document.addEventListener('DOMContentLoaded', () => {
 document.querySelectorAll('.filter-btn').forEach(button => {
   button.addEventListener('click', () => {
     const filter = button.getAttribute('data-filter');
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.classList.remove('active');
+      btn.setAttribute('aria-pressed', 'false');
+    });
     button.classList.add('active');
+    button.setAttribute('aria-pressed', 'true');
     filterProjects(filter);
+  });
+  
+  // Keyboard support for filter buttons
+  button.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      button.click();
+    }
   });
 });
 
